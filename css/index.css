@@ -1,7 +1,9 @@
 /* ********** Custom Properties ********** */
 :root {
-    /* custom-properties */
+    --color-texto: #fff; /* Color para texto general */
+    --color-encabezados: #e5e900; /* Color para encabezados (h3) y enlaces */
 }
+
 /* ********** Reset ********** */
 /*
 1. Use a more-intuitive box-sizing model.
@@ -18,13 +20,7 @@
     margin: 0;
 }
 /*
-3. Allow percentage-based heights in the application
-*/
-html,
-body {
-    height: 100%;
-}
-/*
+
 Typographic tweaks!
 4. Add accessible line-height
 5. Improve text rendering
@@ -32,6 +28,8 @@ Typographic tweaks!
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    background-color: black;
+    font-family: "helvetica", Arial, Helvetica, sans-serif;
 }
 /*
 6. Improve media defaults
@@ -65,6 +63,26 @@ h5,
 h6 {
     overflow-wrap: break-word;
 }
+
+/* Estilos para encabezados */
+h1,
+h2,
+h3 {
+    color: var(--color-texto);
+}
+
+h3 {
+    color: var(--color-encabezados);
+}
+
+/* Estilos para párrafos */
+p {
+    color: var(--color-texto);
+}
+
+ul {
+    padding: 0;
+}
 /*
 9. Create a root stacking context
 */
@@ -73,5 +91,276 @@ h6 {
     isolation: isolate;
 }
 /* ********** Components ********** */
-/* ********** Utilities ********** */
-/* ********** Site Styles ********** */
+.container {
+    max-width: 60%; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centrar horizontalmente el contenido */
+}
+
+/* ---------------------------------- GENERICOS ----------------------------------*/
+.container > h2 {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    font-size: 4.5rem;
+}
+
+/* ---------------------------------- NAVEGACION ----------------------------------*/
+
+header {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.navegacion li {
+    list-style-type: none;
+}
+
+.navegacion a {
+    color: var(--color-encabezados);
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.navegacion a:hover {
+    color: var(--color-texto);
+}
+
+/* ---------------------------------- PORTADA ----------------------------------*/
+.portada {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide en dos columnas de igual ancho */
+    gap: 20px; /* Espacio entre las columnas */
+    align-items: center; /* Centra verticalmente los elementos */
+    margin-top: 2rem;
+}
+
+.contenido-izquierda {
+    grid-column: 1 / 2; /* Primera columna */
+}
+
+.contenido-derecha {
+    grid-column: 2 / 3; /* Segunda columna */
+    padding: 1rem;
+}
+
+.contenido-derecha h1 {
+    font-size: 5rem;
+    font-weight: 500;
+}
+
+.contenido-derecha h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.contenido-derecha p {
+    padding-top: 1rem;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.contenido-derecha a {
+    display: inline-block;
+    margin-top: 3.5rem;
+    color: white;
+    border: 6px solid var(--color-encabezados);
+    padding: 1rem;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.social-media-container {
+    display: flex;
+    align-items: center;
+}
+
+.divisor {
+    flex-grow: 1;
+}
+
+.social-media-container > a {
+    font-size: 3rem;
+    color: var(--color-encabezados);
+    border: none;
+    margin: 0;
+}
+
+.social-media-container > a:hover {
+    color: var(--color-texto);
+    transition: color 0.2s ease-in-out;
+}
+
+/* ---------------------------------- PROYECTOS ----------------------------------*/
+
+.proyectos {
+    display: grid;
+    gap: 20px; /* Espacio entre las celdas */
+}
+
+.proyecto {
+    display: flex;
+    gap: 3rem;
+    padding: 10px;
+}
+
+.proyecto-info {
+    flex: 1; /* La información ocupará todo el espacio disponible en la columna de información */
+    padding: 1rem;
+}
+
+.proyecto-info > h3 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.proyecto-info > p {
+    font-size: 1.5rem;
+}
+
+.enlaces {
+    margin-top: 10rem;
+}
+
+.enlaces a {
+    color: var(--color-texto);
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin-right: 2rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    border: 0.2rem solid var(--color-encabezados);
+    font-weight: bold;
+}
+
+.enlaces a:hover {
+    color: var(--color-encabezados);
+    transition: color 0.2s ease-in-out;
+}
+
+/* ---------------------------------- HABILIDADES ----------------------------------*/
+/* Contenedor principal */
+.habilidades {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos en dos columnas */
+    align-items: start; /* Centra verticalmente los elementos */
+}
+
+/* Columna de Frontend */
+.habilidades-frontend,
+.habilidades-backend {
+    flex: 1; /* Para ocupar el espacio disponible en cada columna */
+    text-align: center; /* Centra el contenido horizontalmente */
+    font-size: 2rem;
+    color: var(--color-encabezados);
+}
+
+.habilidades-tecnologias {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(100px, 1fr)
+    ); /* Columnas automáticas */
+    gap: 5rem; /* Espacio entre las celdas (tecnologías) */
+}
+
+/* Agrega un borde vertical entre las secciones "Frontend" y "Backend" */
+.habilidades-frontend::after {
+    content: "";
+    border-right: 2px solid var(--color-encabezados); /* Borde vertical */
+    height: 100%; /* Estira el borde vertical */
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* Ajusta el estilo de las secciones "Frontend" y "Backend" */
+.habilidades-frontend,
+.habilidades-backend {
+    flex: 1;
+    text-align: center;
+    font-size: 2rem;
+    position: relative;
+    padding: 2rem;
+}
+
+.habilidades-tecnologias > li {
+    list-style-type: none;
+    text-align: center; /* Centra el contenido horizontalmente */
+    font-size: 8rem;
+}
+
+/* ---------------------------------- INFORMACION DE CONTACTO ----------------------------------*/
+
+.contacto-superior {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+}
+
+.contacto-superior > h2 {
+    font-size: 4.5rem;
+}
+
+.contacto-superior > p {
+    color: var(--color-encabezados);
+    font-size: 2rem;
+}
+
+.contacto-inferior {
+    margin-top: 35vh;
+    display: flex;
+    font-size: 1.25rem;
+    gap: 5rem;
+    justify-content: space-around;
+}
+
+.contacto-inferior > p {
+    color: var(--color-encabezados);
+}
+
+.contacto-inferior > a {
+    color: var(--color-texto);
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    border: 0.2rem solid var(--color-encabezados);
+    font-weight: bold;
+}
+
+/* ---------------------------------- FOOTER CON REDES SOCIALES ----------------------------------*/
+
+.footer-social {
+    margin-top: 2rem;
+    display: flex;
+    font-size: 4rem;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    gap: 5rem;
+}
+
+.footer-social > li {
+    list-style-type: none;
+    text-align: center; /* Centra el contenido horizontalmente */
+    font-size: 4rem;
+}
+
+.footer-social a {
+    color: var(--color-encabezados);
+}
+
+.footer-social a:hover {
+    color: var(--color-texto);
+    transition: 0.2s ease-in-out;
+}
