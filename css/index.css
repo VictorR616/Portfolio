@@ -1,366 +1,316 @@
-/* ********** Custom Properties ********** */
-:root {
-    --color-texto: #fff; /* Color para texto general */
-    --color-encabezados: #e5e900; /* Color para encabezados (h3) y enlaces */
+/* ********** PROPIEDADES PERSONALIZADAS ********** */:root {
+    --color-texto:#fff;
+    /* Color para texto general */
+  --color-resaltado:#e5e900;
+    /* Color para encabezados (h3) y enlaces */
+  /* Texto fluido */
+  --step--2:clamp(0.69rem,calc(0.52rem + 0.87vw),1.28rem);
+    --step--1:clamp(0.83rem,calc(0.61rem + 1.14vw),1.6rem);
+    --step-0:clamp(1rem,calc(0.7rem + 1.48vw),2rem);
+    --step-1:clamp(1.2rem,calc(0.81rem + 1.93vw),2.5rem);
+    --step-2:clamp(1.44rem,calc(0.94rem + 2.5vw),3.13rem);
+    --step-3:clamp(1.73rem,calc(1.08rem + 3.23vw),3.91rem);
+    --step-4:clamp(2.07rem,calc(1.24rem + 4.16vw),4.88rem);
+    --step-5:clamp(2.49rem,calc(1.42rem + 5.36vw),6.1rem);
 }
-
-/* ********** Reset ********** */
-/*
-1. Use a more-intuitive box-sizing model.
-*/
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+/* ********** RESET ********** */
+*,*::before,*::after {
+    box-sizing:border-box;
 }
-/*
-2.  Remove default margin
-*/
 * {
-    margin: 0;
+    margin:0;
 }
-/*
-
-Typographic tweaks!
-4. Add accessible line-height
-5. Improve text rendering
-*/
 body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    background-color: black;
-    font-family: "helvetica", Arial, Helvetica, sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    background-color:black;
+    font-family:"helvetica",Arial,Helvetica,sans-serif;
 }
-/*
-6. Improve media defaults
-*/
-img,
-picture,
-video,
-canvas,
-svg {
-    display: block;
-    max-width: 100%;
+img,picture,video,canvas,svg {
+    display:block;
+    max-width:100%;
 }
-/*
-7. Remove built-in form typography styles
-*/
-input,
-button,
-textarea,
-select {
-    font: inherit;
+input,button,textarea,select {
+    font:inherit;
 }
-/*
-8. Avoid text overflows
-*/
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    overflow-wrap: break-word;
+p,h1,h2,h3,h4,h5,h6 {
+    overflow-wrap:break-word;
 }
-
-/* Estilos para encabezados */
-h1,
-h2,
-h3 {
-    color: var(--color-texto);
-}
-
-h3 {
-    color: var(--color-encabezados);
-}
-
-/* Estilos para párrafos */
-p {
-    color: var(--color-texto);
-}
-
 ul {
-    padding: 0;
+    padding:0;
 }
-/*
-9. Create a root stacking context
-*/
-#root,
-#__next {
-    isolation: isolate;
+a {
+    text-decoration:none;
+}
+li {
+    list-style-type:none;
+    text-align:center;
+}
+#root,#__next {
+    isolation:isolate;
+}
+/* ********** CLASES UTILITARIAS ********** */
+/* ---------------------------------- TEXTO FLUIDO ----------------------------------*/
+.step--2 {
+    font-size:var(--step--2);
+}
+.step--1 {
+    font-size:var(--step--1);
+}
+.step-0 {
+    font-size:var(--step-0);
+}
+.step-1 {
+    font-size:var(--step-1);
+}
+.step-2 {
+    font-size:var(--step-2);
+}
+.step-3 {
+    font-size:var(--step-3);
+}
+.step-4 {
+    font-size:var(--step-4);
+}
+.step-5 {
+    font-size:var(--step-5);
 }
 /* ********** Components ********** */
-.container {
-    max-width: 60%; /* Ancho máximo del contenido */
-    margin: 0 auto; /* Centrar horizontalmente el contenido */
+/* ---------------------------------- GENERALES ----------------------------------*/
+h1,h2,p {
+    color:var(--color-texto);
 }
-
-/* ---------------------------------- GENERICOS ----------------------------------*/
-.container > h2 {
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
-    font-size: 4.5rem;
+h3 {
+    color:var(--color-resaltado);
 }
-
-/* ---------------------------------- NAVEGACION ----------------------------------*/
-
 header {
-    padding: 10px 0;
-    text-align: center;
+    padding:10px 0;
+    text-align:center;
 }
-
+.container {
+    max-width:60%;
+    margin:0 auto;
+}
+.container>h2 {
+    margin-top:2rem;
+    margin-bottom:0.5rem;
+}
+/* ---------------------------------- NAVEGACION ----------------------------------*/
 .navegacion {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 1rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-top:1rem;
 }
-
-.navegacion li {
-    list-style-type: none;
-}
-
 .navegacion a {
-    color: var(--color-encabezados);
-    font-size: 1.5rem;
-    text-decoration: none;
-    transition: color 0.2s ease;
+    color:var(--color-resaltado);
+    transition:color 0.2s ease;
 }
-
 .navegacion a:hover {
-    color: var(--color-texto);
+    color:var(--color-texto);
 }
-
 /* ---------------------------------- PORTADA ----------------------------------*/
 .portada {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Divide en dos columnas de igual ancho */
-    gap: 20px; /* Espacio entre las columnas */
-    align-items: center; /* Centra verticalmente los elementos */
-    margin-top: 2rem;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    align-items:center;
+    margin-top:2rem;
 }
-
 .contenido-izquierda {
-    grid-column: 1 / 2; /* Primera columna */
+    grid-column:1 / 2;
 }
-
 .contenido-derecha {
-    grid-column: 2 / 3; /* Segunda columna */
-    padding: 1rem;
+    grid-column:2 / 3;
+    padding:1rem;
 }
-
 .contenido-derecha h1 {
-    font-size: 5rem;
-    font-weight: 500;
+    font-weight:500;
 }
-
 .contenido-derecha h3 {
-    font-size: 1.5rem;
-    font-weight: 300;
+    font-weight:300;
 }
-
 .contenido-derecha p {
-    padding-top: 1rem;
-    font-size: 1.25rem;
-    font-weight: 300;
+    padding-top:1rem;
+    font-weight:300;
 }
-
 .contenido-derecha a {
-    display: inline-block;
-    margin-top: 3.5rem;
-    color: white;
-    border: 6px solid var(--color-encabezados);
-    padding: 1rem;
-    text-decoration: none;
-    font-size: 1.4rem;
-    font-weight: bold;
+    display:inline-block;
+    margin-top:3.5rem;
+    color:white;
+    border:6px solid var(--color-resaltado);
+    padding:1rem;
+    font-weight:bold;
 }
-
+.social-container {
+    display:flex;
+}
 .social-media-container {
-    display: flex;
-    align-items: center;
+    margin-top:2rem;
+    display:flex;
+    gap:2rem;
+    align-items:center;
+    text-align:center;
 }
-
-.divisor {
-    flex-grow: 1;
+.social-icons {
+    display:flex;
+    gap:2rem;
+    position:relative;
 }
-
-.social-media-container > a {
-    font-size: 3rem;
-    color: var(--color-encabezados);
-    border: none;
-    margin: 0;
+.social-icons>a {
+    color:var(--color-resaltado);
+    border:none;
+    margin:0;
 }
-
-.social-media-container > a:hover {
-    color: var(--color-texto);
-    transition: color 0.2s ease-in-out;
+.social-icons>a:hover {
+    color:var(--color-texto);
+    transition:color 0.2s ease-in-out;
 }
-
 /* ---------------------------------- PROYECTOS ----------------------------------*/
-
 .proyectos {
-    display: grid;
-    gap: 20px; /* Espacio entre las celdas */
+    display:grid;
+    grid-template-columns:repeat(1,1fr);
+    gap:20px;
 }
-
 .proyecto {
-    display: flex;
-    gap: 3rem;
-    padding: 10px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:3rem;
+    padding:10px;
 }
-
 .proyecto-info {
-    flex: 1; /* La información ocupará todo el espacio disponible en la columna de información */
-    padding: 1rem;
+    padding:1rem;
 }
-
-.proyecto-info > h3 {
-    font-size: 3rem;
-    font-weight: bold;
+.proyecto-info>h3 {
+    font-weight:bold;
 }
-
-.proyecto-info > p {
-    font-size: 1.5rem;
-}
-
 .enlaces {
-    margin-top: 10rem;
+    margin-top:10rem;
 }
-
 .enlaces a {
-    color: var(--color-texto);
-    font-size: 1.5rem;
-    padding: 1rem;
-    margin-right: 2rem;
-    text-decoration: none;
-    transition: color 0.2s ease;
-    border: 0.2rem solid var(--color-encabezados);
-    font-weight: bold;
+    color:var(--color-texto);
+    padding:1rem;
+    margin-right:2rem;
+    transition:color 0.2s ease;
+    border:0.2rem solid var(--color-resaltado);
+    font-weight:bold;
 }
-
 .enlaces a:hover {
-    color: var(--color-encabezados);
-    transition: color 0.2s ease-in-out;
+    color:var(--color-resaltado);
+    transition:color 0.2s ease-in-out;
 }
-
 /* ---------------------------------- HABILIDADES ----------------------------------*/
-/* Contenedor principal */
 .habilidades {
-    display: flex;
-    justify-content: space-between; /* Distribuye los elementos en dos columnas */
-    align-items: start; /* Centra verticalmente los elementos */
+    display:flex;
+    justify-content:space-between;
+    align-items:start;
+    /
 }
-
-/* Columna de Frontend */
-.habilidades-frontend,
-.habilidades-backend {
-    flex: 1; /* Para ocupar el espacio disponible en cada columna */
-    text-align: center; /* Centra el contenido horizontalmente */
-    font-size: 2rem;
-    color: var(--color-encabezados);
+.habilidades-frontend,.habilidades-backend {
+    flex:1;
+    text-align:center;
+    color:var(--color-resaltado);
+    position:relative;
+    padding:2rem;
 }
-
 .habilidades-tecnologias {
-    display: grid;
-    grid-template-columns: repeat(
-        auto-fill,
-        minmax(100px, 1fr)
-    ); /* Columnas automáticas */
-    gap: 5rem; /* Espacio entre las celdas (tecnologías) */
+    margin-top:2rem;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(100px,1fr));
+    gap:5rem;
 }
-
-/* Agrega un borde vertical entre las secciones "Frontend" y "Backend" */
 .habilidades-frontend::after {
-    content: "";
-    border-right: 2px solid var(--color-encabezados); /* Borde vertical */
-    height: 100%; /* Estira el borde vertical */
-    position: absolute;
-    top: 0;
-    right: 0;
+    content:"";
+    border-right:2px solid var(--color-texto);
+    height:100%;
+    position:absolute;
+    top:0;
+    right:0;
 }
-
-/* Ajusta el estilo de las secciones "Frontend" y "Backend" */
-.habilidades-frontend,
-.habilidades-backend {
-    flex: 1;
-    text-align: center;
-    font-size: 2rem;
-    position: relative;
-    padding: 2rem;
-}
-
-.habilidades-tecnologias > li {
-    list-style-type: none;
-    text-align: center; /* Centra el contenido horizontalmente */
-    font-size: 8rem;
-}
-
 /* ---------------------------------- INFORMACION DE CONTACTO ----------------------------------*/
-
+/* Reemplazar Flexbox con Grid en .contacto-superior */
 .contacto-superior {
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 6rem;
-}
-
-.contacto-superior > h2 {
-    font-size: 4.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
+  align-items: center;
+  gap: 6rem;
 }
 
 .contacto-superior > p {
-    color: var(--color-encabezados);
-    font-size: 2rem;
+  color: var(--color-resaltado);
 }
 
+/* Reemplazar Flexbox con Grid en .contacto-inferior */
 .contacto-inferior {
-    margin-top: 35vh;
-    display: flex;
-    font-size: 1.25rem;
-    gap: 5rem;
-    justify-content: space-around;
+  margin-top: 30vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas automáticas con un mínimo de 200px */
+  gap: 5rem;
+  justify-content: space-around;
 }
 
 .contacto-inferior > p {
-    color: var(--color-encabezados);
+  color: var(--color-resaltado);
 }
 
 .contacto-inferior > a {
-    color: var(--color-texto);
-    font-size: 1.5rem;
-    padding: 1rem;
-    text-decoration: none;
-    transition: color 0.2s ease;
-    border: 0.2rem solid var(--color-encabezados);
-    font-weight: bold;
+  color: var(--color-texto);
+  padding: 1rem;
+  transition: color 0.2s ease;
+  border: 0.2rem solid var(--color-resaltado);
+  font-weight: bold;
 }
 
 /* ---------------------------------- FOOTER CON REDES SOCIALES ----------------------------------*/
-
 .footer-social {
-    margin-top: 2rem;
-    display: flex;
-    font-size: 4rem;
-    justify-content: center;
-    align-items: center;
-    padding-top: 1rem;
-    gap: 5rem;
+    margin-top:2rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-top:1rem;
+    gap:5rem;
 }
-
-.footer-social > li {
-    list-style-type: none;
-    text-align: center; /* Centra el contenido horizontalmente */
-    font-size: 4rem;
-}
-
 .footer-social a {
-    color: var(--color-encabezados);
+    color:var(--color-resaltado);
+}
+.footer-social a:hover {
+    color:var(--color-texto);
+    transition:0.2s ease-in-out;
 }
 
-.footer-social a:hover {
-    color: var(--color-texto);
-    transition: 0.2s ease-in-out;
+@media screen and (max-width: 1200px) {
+    .portada {
+        grid-template-columns: repeat(1, 1fr); /* Cambia a una sola columna */
+    }
+  
+    .contenido-izquierda {
+        grid-column: auto; 
+    }
+
+    .contenido-derecha {
+        grid-column: auto; 
+    }
+
+    .imagen-izquierda {
+        margin: 0 auto;  
+    }
+
+    .proyecto {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+    
+    .proyecto .proyecto-imagen {
+        grid-row: 1;
+        margin: 0 auto; 
+    }
+
+    .proyecto .proyecto-info {
+        grid-row: 2; 
+    }
+
+    .enlaces {
+        margin-top: 4rem;
+    }
 }
