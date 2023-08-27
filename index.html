@@ -13,10 +13,10 @@
     </head>
     <body>
         <!------------------------- NAVEGACION ------------------------->
-        <header>
+        <header id="portada">
             <nav class="container">
                 <ul class="navegacion step--1">
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="#portada">Home</a></li>
                     <li><a href="#proyectos">Proyectos</a></li>
                     <li><a href="#habilidades">Habilidades</a></li>
                     <li><a href="#contacto">Contacto</a></li>
@@ -29,6 +29,7 @@
         <section class="portada container">
             <article class="contenido-izquierda">
                 <img
+                    loading="lazy"
                     src="assets/Perfil.png"
                     alt="Imagen de Victor Rojas"
                     class="imagen-izquierda" />
@@ -40,13 +41,16 @@
                     Soy un arquitecto de la web, tejiendo redes digitales con código.
                     Mi pasión es crear la infraestructura digital del futuro.
                 </p>
-                <a href="ruta_a_tu_curriculum.pdf" class="ver-curriculum step--1">
+                <a href="assets/Victor Rojas.pdf" class="ver-curriculum step--1">
                     <i class="fa-solid fa-download"></i> Ver curriculum
                 </a>
 
                 <div class="social-container">
-                    <div class="social-media-container">
-                        <p class="social-media step--1">Social Media</p>
+                    <div class="social-media">
+                        <p class="social-media step--1">
+                            Social Media
+                            <i class="fa-solid fa-arrow-right social-arrow"></i>
+                        </p>
                     </div>
                     <div class="social-icons">
                         <a class="step-2" href=""
@@ -65,12 +69,12 @@
         <!------------------------- PORTADA ------------------------->
         <main>
             <!------------------------- PROYECTOS ------------------------->
-            <section class="container">
+            <section class="container" id="proyectos">
                 <h2 class="step-4">Proyectos</h2>
                 <section class="proyectos">
                     <article class="proyecto">
                         <div class="proyecto-imagen">
-                            <img src="assets/Fondo.jpg" alt="" />
+                            <img loading="lazy" src="assets/Fondo.jpg" alt="" />
                         </div>
                         <div class="proyecto-info">
                             <h3 class="step-2">Proyecto 1</h3>
@@ -107,12 +111,12 @@
                             </div>
                         </div>
                         <div class="proyecto-imagen">
-                            <img src="assets/Fondo.jpg" alt="" />
+                            <img loading="lazy" src="assets/Fondo.jpg" alt="" />
                         </div>
                     </article>
                     <article class="proyecto">
                         <div class="proyecto-imagen">
-                            <img src="assets/Fondo.jpg" alt="" />
+                            <img loading="lazy" src="assets/Fondo.jpg" alt="" />
                         </div>
                         <div class="proyecto-info">
                             <h3 class="step-2">Proyecto 3</h3>
@@ -136,7 +140,7 @@
             <!------------------------- PROYECTOS ------------------------->
 
             <!------------------------- HABILIDADES ------------------------->
-            <section class="container">
+            <section class="container" id="habilidades">
                 <h2 class="step-4">Habilidades</h2>
                 <section class="habilidades">
                     <article class="habilidades-frontend">
@@ -167,32 +171,34 @@
             <!------------------------- HABILIDADES ------------------------->
 
             <!------------------------- INFORMACION DE CONTACTO ------------------------->
-            <section class="container">
-                <article class="contacto-superior">
-                    <h2 class="step-4">Información de contacto</h2>
-                    <p class="step--2"><strong>Victor Rojas</strong></p>
-                </article>
-                <article class="contacto-inferior">
-                    <div class="contacto-inferior">
-                        <p class="step--1">
-                            Dirección:<br />Villa Alemana, Valparaíso, Chile
-                        </p>
-                        <p class="step--1">
-                            Correo:<br />
-                            victor616rojas@gmail.com
-                        </p>
-                        <p class="step--1">
-                            Teléfono:<br />
-                            +569 95885640
-                        </p>
-                        <a
-                            class="step--1"
-                            href="contacto.html"
-                            class="boton-contacto">
-                            Contacto
-                        </a>
-                    </div>
-                </article>
+            <section class="container" id="contacto">
+                <section class="contacto">
+                    <article class="contacto-superior">
+                        <h2 class="step-4">Información de contacto</h2>
+                        <p class="step--2"><strong>Victor Rojas</strong></p>
+                    </article>
+                    <article class="contacto-inferior">
+                        <div class="contacto-inferior">
+                            <p class="step--1">
+                                Dirección:<br />Villa Alemana, Valparaíso, Chile
+                            </p>
+                            <p class="step--1">
+                                Correo:<br />
+                                victor616rojas@gmail.com
+                            </p>
+                            <p class="step--1">
+                                Teléfono:<br />
+                                +569 95885640
+                            </p>
+                            <a
+                                class="step--1"
+                                href="contacto.html"
+                                class="boton-contacto">
+                                Contacto
+                            </a>
+                        </div>
+                    </article>
+                </section>
             </section>
             <!------------------------- INFORMACION DE CONTACTO ------------------------->
         </main>
