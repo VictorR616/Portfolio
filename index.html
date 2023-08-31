@@ -13,9 +13,14 @@
     </head>
     <body>
         <!------------------------- NAVEGACION ------------------------->
-        <header id="portada">
+        <header class="header">
             <nav class="container">
-                <ul class="navegacion step--1">
+                <div class="menu-toggle" id="menu-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navegacion step--1" id="navegacion">
                     <li><a href="#portada">Home</a></li>
                     <li><a href="#proyectos">Proyectos</a></li>
                     <li><a href="#habilidades">Habilidades</a></li>
@@ -26,7 +31,7 @@
         <!------------------------- NAVEGACION ------------------------->
 
         <!------------------------- PORTADA ------------------------->
-        <section class="portada container">
+        <section class="portada container" id="portada">
             <article class="contenido-izquierda">
                 <img
                     loading="lazy"
@@ -38,31 +43,36 @@
                 <h1 class="step-5">Victor Rojas</h1>
                 <h3 class="step-0">FullStack Web Developer</h3>
                 <p class="step--1">
-                    Soy un arquitecto de la web, tejiendo redes digitales con código.
+                    Soy un arquitecto de la web, tejiendo redes digitales con Código.
                     Mi pasión es crear la infraestructura digital del futuro.
                 </p>
-                <a href="assets/Victor Rojas.pdf" class="ver-curriculum step--1">
-                    <i class="fa-solid fa-download"></i> Ver curriculum
+
+                <a
+                    class="contenido_derecha_curriculum btn-effect step--1 up"
+                    href="#">
+                    <i class="fa-solid fa-download"></i>
+                    Ver curriculum
                 </a>
 
-                <div class="social-container">
-                    <div class="social-media">
-                        <p class="social-media step--1">
-                            Social Media
-                            <i class="fa-solid fa-arrow-right social-arrow"></i>
-                        </p>
-                    </div>
-                    <div class="social-icons">
-                        <a class="step-2" href=""
-                            ><i class="fa-brands fa-linkedin"></i
-                        ></a>
-                        <a class="step-2" href=""
-                            ><i class="fa-brands fa-github"></i
-                        ></a>
-                        <a class="step-2" href=""
-                            ><i class="fa-brands fa-instagram"></i
-                        ></a>
-                    </div>
+                <div class="social-media">
+                    <p class="step-0">Social Media</p>
+                    <ul class="social-icons">
+                        <li>
+                            <a class="step-2" href=""
+                                ><i class="fa-brands fa-linkedin"></i
+                            ></a>
+                        </li>
+                        <li>
+                            <a class="step-2" href=""
+                                ><i class="fa-brands fa-github"></i
+                            ></a>
+                        </li>
+                        <li>
+                            <a class="step-2" href=""
+                                ><i class="fa-brands fa-instagram"></i
+                            ></a>
+                        </li>
+                    </ul>
                 </div>
             </article>
         </section>
@@ -83,12 +93,24 @@
                                 elit. Magni sint perferendis labore quos quaerat
                                 praesentium ducimus modi ab, quam nisi.
                             </p>
+                            <ul class="proyecto_tecnologias">
+                                <li><i class="fa-brands fa-html5 step-5"></i></li>
+                                <li><i class="fa-brands fa-css3-alt step-5"></i></li>
+                                <li><i class="fa-brands fa-css3-alt step-5"></i></li>
+                                <li><i class="fa-brands fa-css3-alt step-5"></i></li>
+                                <li><i class="fa-brands fa-css3-alt step-5"></i></li>
+                                <li>
+                                    <i class="fa-brands fa-square-js step-5"></i>
+                                </li>
+                                <!-- Agrega más tecnologías frontend si es necesario -->
+                            </ul>
+
                             <div class="enlaces">
                                 <a class="step--1" href=""
                                     ><i class="fa-solid fa-eye"></i> Ver</a
                                 >
                                 <a class="step--1" href=""
-                                    ><i class="fa-brands fa-github"></i> código</a
+                                    ><i class="fa-brands fa-github"></i> Código</a
                                 >
                             </div>
                         </div>
@@ -101,12 +123,23 @@
                                 elit. Magni sint perferendis labore quos quaerat
                                 praesentium ducimus modi ab, quam nisi.
                             </p>
+                            <ul class="proyecto_tecnologias">
+                                <li><i class="fa-brands fa-html5 step-5"></i></li>
+                                <li><i class="fa-brands fa-css3-alt step-5"></i></li>
+                                <li><i class="fa-brands fa-css3-alt step-5"></i></li>
+                                <li><i class="fa-brands fa-css3-alt step-5"></i></li>
+                                <li><i class="fa-brands fa-css3-alt step-5"></i></li>
+                                <li>
+                                    <i class="fa-brands fa-square-js step-5"></i>
+                                </li>
+                                <!-- Agrega más tecnologías frontend si es necesario -->
+                            </ul>
                             <div class="enlaces">
                                 <a class="step--1" href=""
                                     ><i class="fa-solid fa-eye"></i> Ver</a
                                 >
                                 <a class="step--1" href=""
-                                    ><i class="fa-brands fa-github"></i> código</a
+                                    ><i class="fa-brands fa-github"></i> Código</a
                                 >
                             </div>
                         </div>
@@ -125,12 +158,23 @@
                                 elit. Magni sint perferendis labore quos quaerat
                                 praesentium ducimus modi ab, quam nisi.
                             </p>
+                            <ul class="proyecto_tecnologias">
+                                <li><i class="fa-brands fa-html5 step-5"></i></li>
+                                <li><i class="fa-brands fa-css3-alt step-5"></i></li>
+                                <li><i class="fa-brands fa-css3-alt step-5"></i></li>
+                                <li><i class="fa-brands fa-css3-alt step-5"></i></li>
+                                <li><i class="fa-brands fa-css3-alt step-5"></i></li>
+                                <li>
+                                    <i class="fa-brands fa-square-js step-5"></i>
+                                </li>
+                                <!-- Agrega más tecnologías frontend si es necesario -->
+                            </ul>
                             <div class="enlaces">
                                 <a class="step--1" href=""
                                     ><i class="fa-solid fa-eye"></i> Ver</a
                                 >
                                 <a class="step--1" href=""
-                                    ><i class="fa-brands fa-github"></i> código</a
+                                    ><i class="fa-brands fa-github"></i> Código</a
                                 >
                             </div>
                         </div>
@@ -172,31 +216,23 @@
 
             <!------------------------- INFORMACION DE CONTACTO ------------------------->
             <section class="container" id="contacto">
+                <h2 class="step-4">Información de contacto</h2>
                 <section class="contacto">
                     <article class="contacto-superior">
-                        <h2 class="step-4">Información de contacto</h2>
-                        <p class="step--2"><strong>Victor Rojas</strong></p>
+                        <p class="step-0"><strong>Victor Rojas</strong></p>
                     </article>
                     <article class="contacto-inferior">
-                        <div class="contacto-inferior">
-                            <p class="step--1">
-                                Dirección:<br />Villa Alemana, Valparaíso, Chile
-                            </p>
-                            <p class="step--1">
-                                Correo:<br />
-                                victor616rojas@gmail.com
-                            </p>
-                            <p class="step--1">
-                                Teléfono:<br />
-                                +569 95885640
-                            </p>
-                            <a
-                                class="step--1"
-                                href="contacto.html"
-                                class="boton-contacto">
-                                Contacto
-                            </a>
-                        </div>
+                        <p class="step-0">
+                            Dirección:<br />Villa Alemana, Valparaíso, Chile
+                        </p>
+                        <p class="step-0">
+                            Correo:<br />
+                            victor616rojas@gmail.com
+                        </p>
+                        <p class="step-0">
+                            Teléfono:<br />
+                            +569 95885640
+                        </p>
                     </article>
                 </section>
             </section>
