@@ -10,28 +10,42 @@
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+        <!------------------------- IMPORTACION DE GOOGLE FONT ------------------------->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Raleway:wght@400;700&display=swap"
+            rel="stylesheet" />
     </head>
     <body>
         <!------------------------- NAVEGACION ------------------------->
-        <header class="header">
-            <nav class="container">
+
+        <header class="nav-secondary container">
+            <nav>
                 <div class="menu-toggle" id="menu-toggle">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </div>
-                <ul class="navegacion step--1" id="navegacion">
-                    <li><a href="#portada">Home</a></li>
-                    <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="#habilidades">Habilidades</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                <ul role="list" class="navegacion step--1" id="navegacion">
+                    <li><a class="text-accent-700" href="#portada">Home</a></li>
+                    <li>
+                        <a class="text-accent-700" href="#proyectos">Proyectos</a>
+                    </li>
+                    <li>
+                        <a class="text-accent-700" href="#habilidades"
+                            >Habilidades</a
+                        >
+                    </li>
+                    <li><a class="text-accent-700" href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
         </header>
-        <!------------------------- NAVEGACION ------------------------->
 
+        <!------------------------- NAVEGACION ------------------------->
         <!------------------------- PORTADA ------------------------->
-        <section class="portada container" id="portada">
+        <section class="portada container hidden" id="portada">
             <article class="contenido-izquierda">
                 <img
                     loading="lazy"
@@ -40,35 +54,46 @@
                     class="imagen-izquierda" />
             </article>
             <article class="contenido-derecha">
-                <h1 class="step-5">Victor Rojas</h1>
-                <h3 class="step-0">FullStack Web Developer</h3>
-                <p class="step--1">
+                <h1 class="step-5 fw-semi-bold text-primary-400">Victor Rojas</h1>
+                <h2 class="step-0 fw-regular text-accent-700">
+                    FullStack Web Developer
+                </h2>
+                <p class="step--1 fw-regular text-primary-400">
                     Soy un arquitecto de la web, tejiendo redes digitales con Código.
                     Mi pasión es crear la infraestructura digital del futuro.
                 </p>
 
                 <a
-                    class="contenido_derecha_curriculum btn-effect step--1 up"
+                    class="contenido_derecha_curriculum btn-effect step--1 up text-primary-400 fw-bold border-radius-primary"
                     href="#">
                     <i class="fa-solid fa-download"></i>
                     Ver curriculum
                 </a>
 
                 <div class="social-media">
-                    <p class="step-0">Social Media</p>
-                    <ul class="social-icons">
+                    <p class="step-0 text-primary-400">Social Media</p>
+                    <ul role="list" aria-label="Social links" class="social-icons">
                         <li>
-                            <a class="step-2" href=""
+                            <a
+                                aria-label="linkedin"
+                                class="step-2 text-accent-700"
+                                href=""
                                 ><i class="fa-brands fa-linkedin"></i
                             ></a>
                         </li>
                         <li>
-                            <a class="step-2" href=""
+                            <a
+                                aria-label="github"
+                                class="step-2 text-accent-700"
+                                href=""
                                 ><i class="fa-brands fa-github"></i
                             ></a>
                         </li>
                         <li>
-                            <a class="step-2" href=""
+                            <a
+                                aria-label="instagram"
+                                class="step-2 text-accent-700"
+                                href=""
                                 ><i class="fa-brands fa-instagram"></i
                             ></a>
                         </li>
@@ -76,29 +101,50 @@
                 </div>
             </article>
         </section>
+
         <!------------------------- PORTADA ------------------------->
+        <!------------------------- NAVEGACION MOVIL ------------------------->
+        <header class="nav-primary container">
+            <nav>
+                <ul aria-label="Primary" role="list" class="navegacion step--1">
+                    <li><a class="text-accent-700" href="#portada">Home</a></li>
+                    <li>
+                        <a class="text-accent-700" href="#proyectos">Proyectos</a>
+                    </li>
+                    <li>
+                        <a class="text-accent-700" href="#habilidades"
+                            >Habilidades</a
+                        >
+                    </li>
+                    <li><a class="text-accent-700" href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!------------------------- NAVEGACION MOVIL ------------------------->
         <main>
             <!------------------------- PROYECTOS ------------------------->
-            <section class="container" id="proyectos">
-                <h2 class="step-4">Proyectos</h2>
+            <section class="container hidden" id="proyectos">
+                <h2 class="step-4 text-primary-400">Proyectos</h2>
                 <section class="proyectos">
                     <article class="proyecto">
                         <div class="proyecto-imagen">
                             <img loading="lazy" src="assets/Fondo.jpg" alt="" />
                         </div>
                         <div class="proyecto-info">
-                            <h3 class="step-2">Proyecto 1</h3>
-                            <p class="step--1">
+                            <h3 class="step-2 fw-bold text-accent-700">
+                                Proyecto 1
+                            </h3>
+                            <p class="step--1 text-primary-400">
                                 Lorem, ipsum dolor sit amet consectetur adipisicing
                                 elit. Magni sint perferendis labore quos quaerat
                                 praesentium ducimus modi ab, quam nisi.
                             </p>
-                            <ul class="proyecto_tecnologias">
-                                <li><i class="fa-brands fa-html5 step-5"></i></li>
-                                <li><i class="fa-brands fa-css3-alt step-5"></i></li>
-                                <li><i class="fa-brands fa-css3-alt step-5"></i></li>
-                                <li><i class="fa-brands fa-css3-alt step-5"></i></li>
-                                <li><i class="fa-brands fa-css3-alt step-5"></i></li>
+                            <ul class="proyecto_tecnologias text-accent-700">
+                                <li><i class="fa-brands fa-html5 step-3"></i></li>
+                                <li><i class="fa-brands fa-css3-alt step-3"></i></li>
+                                <li><i class="fa-brands fa-css3-alt step-3"></i></li>
+                                <li><i class="fa-brands fa-css3-alt step-3"></i></li>
+                                <li><i class="fa-brands fa-css3-alt step-3"></i></li>
                                 <li>
                                     <i class="fa-brands fa-square-js step-5"></i>
                                 </li>
@@ -106,10 +152,14 @@
                             </ul>
 
                             <div class="enlaces">
-                                <a class="step--1" href=""
+                                <a
+                                    class="step--1 fw-bold border-radius-primary text-primary-400"
+                                    href=""
                                     ><i class="fa-solid fa-eye"></i> Ver</a
                                 >
-                                <a class="step--1" href=""
+                                <a
+                                    class="step--1 fw-bold border-radius-primary text-primary-400"
+                                    href=""
                                     ><i class="fa-brands fa-github"></i> Código</a
                                 >
                             </div>
@@ -117,13 +167,15 @@
                     </article>
                     <article class="proyecto">
                         <div class="proyecto-info">
-                            <h3 class="step-2">Proyecto 2</h3>
-                            <p class="step--1">
+                            <h3 class="step-2 fw-bold text-accent-700">
+                                Proyecto 2
+                            </h3>
+                            <p class="step--1 text-primary-400">
                                 Lorem, ipsum dolor sit amet consectetur adipisicing
                                 elit. Magni sint perferendis labore quos quaerat
                                 praesentium ducimus modi ab, quam nisi.
                             </p>
-                            <ul class="proyecto_tecnologias">
+                            <ul class="proyecto_tecnologias text-accent-700">
                                 <li><i class="fa-brands fa-html5 step-5"></i></li>
                                 <li><i class="fa-brands fa-css3-alt step-5"></i></li>
                                 <li><i class="fa-brands fa-css3-alt step-5"></i></li>
@@ -135,10 +187,14 @@
                                 <!-- Agrega más tecnologías frontend si es necesario -->
                             </ul>
                             <div class="enlaces">
-                                <a class="step--1" href=""
+                                <a
+                                    class="step--1 fw-bold border-radius-primary text-primary-400"
+                                    href=""
                                     ><i class="fa-solid fa-eye"></i> Ver</a
                                 >
-                                <a class="step--1" href=""
+                                <a
+                                    class="step--1 fw-bold border-radius-primary text-primary-400"
+                                    href=""
                                     ><i class="fa-brands fa-github"></i> Código</a
                                 >
                             </div>
@@ -152,13 +208,15 @@
                             <img loading="lazy" src="assets/Fondo.jpg" alt="" />
                         </div>
                         <div class="proyecto-info">
-                            <h3 class="step-2">Proyecto 3</h3>
-                            <p class="step--1">
+                            <h3 class="step-2 fw-bold text-accent-700">
+                                Proyecto 3
+                            </h3>
+                            <p class="step--1 text-primary-400">
                                 Lorem, ipsum dolor sit amet consectetur adipisicing
                                 elit. Magni sint perferendis labore quos quaerat
                                 praesentium ducimus modi ab, quam nisi.
                             </p>
-                            <ul class="proyecto_tecnologias">
+                            <ul class="proyecto_tecnologias text-accent-700">
                                 <li><i class="fa-brands fa-html5 step-5"></i></li>
                                 <li><i class="fa-brands fa-css3-alt step-5"></i></li>
                                 <li><i class="fa-brands fa-css3-alt step-5"></i></li>
@@ -170,10 +228,14 @@
                                 <!-- Agrega más tecnologías frontend si es necesario -->
                             </ul>
                             <div class="enlaces">
-                                <a class="step--1" href=""
+                                <a
+                                    class="step--1 fw-bold border-radius-primary text-primary-400"
+                                    href=""
                                     ><i class="fa-solid fa-eye"></i> Ver</a
                                 >
-                                <a class="step--1" href=""
+                                <a
+                                    class="step--1 fw-bold border-radius-primary text-primary-400"
+                                    href=""
                                     ><i class="fa-brands fa-github"></i> Código</a
                                 >
                             </div>
@@ -184,10 +246,10 @@
             <!------------------------- PROYECTOS ------------------------->
 
             <!------------------------- HABILIDADES ------------------------->
-            <section class="container" id="habilidades">
-                <h2 class="step-4">Habilidades</h2>
+            <section class="container hidden" id="habilidades">
+                <h2 class="step-4 text-primary-400">Habilidades</h2>
                 <section class="habilidades">
-                    <article class="habilidades-frontend">
+                    <article class="habilidades-frontend text-accent-700">
                         <h3 class="step-0">Frontend</h3>
                         <ul class="habilidades-tecnologias">
                             <li><i class="fa-brands fa-html5 step-5"></i></li>
@@ -199,7 +261,7 @@
                             <!-- Agrega más tecnologías frontend si es necesario -->
                         </ul>
                     </article>
-                    <article class="habilidades-backend">
+                    <article class="habilidades-backend text-accent-700">
                         <h3 class="step-0">Backend</h3>
                         <ul class="habilidades-tecnologias">
                             <li><i class="fa-brands fa-python step-5"></i></li>
@@ -215,21 +277,23 @@
             <!------------------------- HABILIDADES ------------------------->
 
             <!------------------------- INFORMACION DE CONTACTO ------------------------->
-            <section class="container" id="contacto">
-                <h2 class="step-4">Información de contacto</h2>
+            <section class="container hidden" id="contacto">
+                <h2 class="step-4 text-primary-400">Información de contacto</h2>
                 <section class="contacto">
                     <article class="contacto-superior">
-                        <p class="step-0"><strong>Victor Rojas</strong></p>
+                        <p class="step-0 text-accent-700">
+                            <strong>Victor Rojas</strong>
+                        </p>
                     </article>
                     <article class="contacto-inferior">
-                        <p class="step-0">
+                        <p class="step-0 text-accent-700">
                             Dirección:<br />Villa Alemana, Valparaíso, Chile
                         </p>
-                        <p class="step-0">
+                        <p class="step-0 text-accent-700">
                             Correo:<br />
                             victor616rojas@gmail.com
                         </p>
-                        <p class="step-0">
+                        <p class="step-0 text-accent-700">
                             Teléfono:<br />
                             +569 95885640
                         </p>
@@ -241,11 +305,12 @@
 
         <!------------------------- FOOTER CON REDES SOCIALES ------------------------->
         <footer>
-            <section class="container">
-                <ul class="footer-social">
+            <section class="hidden">
+                <ul role="list" aria-label="Social Links" class="footer-social">
                     <li>
                         <a
-                            class="step-3"
+                            aria-label="linkedin"
+                            class="step-3 text-accent-700"
                             href="https://www.facebook.com/tu_perfil_de_facebook"
                             target="_blank"
                             ><i class="fa-brands fa-linkedin"></i
@@ -253,7 +318,8 @@
                     </li>
                     <li>
                         <a
-                            class="step-3"
+                            aria-label="github"
+                            class="step-3 text-accent-700"
                             href="https://twitter.com/tu_perfil_de_twitter"
                             target="_blank"
                             ><i class="fa-brands fa-github"></i
@@ -261,7 +327,8 @@
                     </li>
                     <li>
                         <a
-                            class="step-3"
+                            aria-label="instagram"
+                            class="step-3 text-accent-700"
                             href="https://www.linkedin.com/in/tu_perfil_de_linkedin"
                             target="_blank"
                             ><i class="fa-brands fa-instagram"></i

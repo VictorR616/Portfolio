@@ -1,8 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.getElementById("menu-toggle");
-    const menu = document.querySelector(".navegacion");
-    const links = document.querySelectorAll(".navegacion a");
-
     const d = document;
     d.addEventListener("click", (e) => {
         // Si el elemento objetivo del evento coincide con el selector de menuToggle
@@ -19,4 +15,24 @@ document.addEventListener("DOMContentLoaded", function () {
             d.querySelector("#menu-toggle").classList.remove("open");
         }
     });
+
+    // Posicion sticky no tapa titulos
+    const navigationHeight = d.querySelector(".nav-primary").offsetHeight;
+
+    d.documentElement.style.setProperty(
+        "--scroll-padding",
+        navigationHeight + 1 + "px"
+    );
+
+    // Animacion de transicion
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    });
+
+    const hiddenElements = d.querySelectorAll(".hidden");
+    hiddenElements.forEach((el) => observer.observe(el));
 });
