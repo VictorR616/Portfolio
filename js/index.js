@@ -32,4 +32,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const hiddenElements = d.querySelectorAll(".hidden");
     hiddenElements.forEach((el) => observer.observe(el));
+
+    // Función para agregar o quitar la clase "sticky-nav" según la posición de desplazamiento
+    function toggleStickyNav() {
+        const isSticky = window.scrollY >= navPrimaryTop;
+        navPrimary.classList.toggle("sticky-nav", isSticky);
+    }
+
+    // Elemento .nav-primary y su posición superior
+    const navPrimary = document.querySelector(".nav-primary");
+    const navPrimaryTop = navPrimary.offsetTop;
+
+    // Evento de desplazamiento para llamar a toggleStickyNav
+    window.addEventListener("scroll", toggleStickyNav);
+
+    // Llamada inicial para verificar el estado en la parte superior
+    toggleStickyNav();
 });
