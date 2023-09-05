@@ -12,11 +12,9 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
         <!------------------------- IMPORTACION DE GOOGLE FONT ------------------------->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Raleway:wght@400;700&display=swap"
-            rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     </head>
     <body>
         <!------------------------- NAVEGACION ------------------------->
@@ -106,9 +104,9 @@
 
         <!------------------------- PORTADA ------------------------->
         <!------------------------- NAVEGACION MOVIL ------------------------->
-        <header class="nav-primary container">
+        <header class="nav-primary">
             <nav>
-                <ul aria-label="Primary" role="list" class="navegacion step--1">
+                <ul class="navegacion step--1" aria-label="Primary" role="list">
                     <li><a class="text-accent-700" href="#portada">Home</a></li>
                     <li>
                         <a class="text-accent-700" href="#proyectos">Proyectos</a>
@@ -242,35 +240,44 @@
 
             <!------------------------- HABILIDADES ------------------------->
             <section class="container hidden" id="habilidades">
-                <h2 class="step-4 text-primary-400">Habilidades</h2>
-                <section class="two_columns">
-                    <article class="habilidades_frontend text-accent-700">
-                        <h3 class="step-0">Frontend</h3>
-                        <ul class="habilidades_tecnologias">
-                            <li><i class="fa-brands fa-html5 step-5"></i></li>
-                            <li><i class="fa-brands fa-css3-alt step-5"></i></li>
-                            <li><i class="fa-brands fa-css3-alt step-5"></i></li>
-                            <li><i class="fa-brands fa-css3-alt step-5"></i></li>
-                            <li><i class="fa-brands fa-css3-alt step-5"></i></li>
-                            <li><i class="fa-brands fa-square-js step-5"></i></li>
-                            <li><i class="fa-brands fa-square-js step-5"></i></li>
-                            <li><i class="fa-brands fa-square-js step-5"></i></li>
-                            <!-- Agrega más tecnologías frontend si es necesario -->
-                        </ul>
+                <h2 class="step-4 text-primary-400">Sobre Mí</h2>
+                <section class="about_me two_columns">
+                    <article class="about_me_text">
+                        <p class="step--1">¡Hola! Soy Victor Rojas, un ingeniero informático con experiencia en desarrollo web backend e ingeniería de datos. 
+                            </p>
+                        <p class="step--1"> Además de mi pasión por la tecnología, disfruto 🎮 de los videojuegos de estrategia y soy un apasionado del género musical del metal 🤟 
+                           </p>
+                        
                     </article>
-                    <article class="habilidades_backend text-accent-700">
-                        <h3 class="step-0">Backend</h3>
-                        <ul class="habilidades_tecnologias">
-                            <li><i class="fa-brands fa-python step-5"></i></li>
-                            <li><i class="fa-brands fa-node-js step-5"></i></li>
-                            <li><i class="fa-brands fa-node-js step-5"></i></li>
-                            <li><i class="fa-brands fa-node-js step-5"></i></li>
-                            <li><i class="fa-brands fa-node-js step-5"></i></li>
-                            <li><i class="fa-brands fa-node-js step-5"></i></li>
-                            <li><i class="fa-brands fa-node-js step-5"></i></li>
-                            <li><i class="fa-brands fa-node-js step-5"></i></li>
-                            <!-- Agrega más tecnologías backend si es necesario -->
-                        </ul>
+                    <article class="about_me_tecnologies">
+                        <div>
+                            <h3 class="step-1">Backend</h3>
+                            <ul class="about_me_tecnology">
+                                <li>Python</li>
+                                <li>Django</li>
+                                <li>Java</li>
+                                <li>C#</li>
+                                <li>Node Js</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="step-1">Frontend</h3>
+                            <ul class="about_me_tecnology">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>React</li>
+                                <li>Vue</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="step-1">Devops</h3>
+                            <ul class="about_me_tecnology">
+                                <li>Github</li>
+                                <li>Gitlab</li>
+                                <li>Azure</li>
+                            </ul>
+                        </div>
                     </article>
                 </section>
             </section>
@@ -279,7 +286,6 @@
             <!------------------------- INFORMACION DE CONTACTO ------------------------->
             <section class="container hidden" id="contacto">
                 <h2 class="step-4 text-primary-400">Información de contacto</h2>
-                <section class="contacto">
                     <section class="contacto-superior two_columns">
                         <form
                             class="contact-form"
@@ -315,20 +321,20 @@
                             
                             <div class="info">
                                 <div class="bg-circle">
-                                    <i class="fa-solid fa-location-dot step-1"></i>
+                                    <i class="fa-solid fa-location-dot step--1"></i>
                                 </div>
                                 <p class="step--2"> <strong>Dirección: </strong><span>Villa Alemana, Región Valparaíso, Chile</span></p>
                             </div>
                             <div class="info">
                                 <div class="bg-circle">
-                                    <i class="fa-solid fa-phone step-1"></i>
+                                    <i class="fa-solid fa-phone step--1"></i>
                                 </div>
                                 <p class="step--2"> <strong>Telefono: </strong><span>+56995885640</span></p>
                             </div>
                             
                             <div class="info">
                                 <div class="bg-circle">
-                                    <i class="fa-solid fa-envelope step-1"></i>
+                                    <i class="fa-solid fa-envelope step--1"></i>
                                 </div>
                                 <p class="step--2"> <strong>Email: </strong><span>Victor616rojas@gmail.com</span></p>
                             </div>
@@ -338,7 +344,7 @@
                             
                         </section>
                 </section>
-            </section>
+                </section>
             <!------------------------- INFORMACION DE CONTACTO ------------------------->
         </main>
 

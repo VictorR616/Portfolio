@@ -3,7 +3,7 @@
     --clr-neutral-400: hsl(0, 0%, 1%);
     --clr-accent-700: #5a00eb;
 
-    --ff-primary: "Be Vietnam Pro", Arial, Helvetica, sans-serif;
+    --ff-primary: "Poppins", Arial, Helvetica, sans-serif;
 
     --ff-body: var(var(--ff-primary));
     --ff-heading: var(var(--ff-primary));
@@ -43,7 +43,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: var(--scroll-padding, 50px);
+    scroll-padding-top: var(--scroll-padding, 75px);
 }
 
 body {
@@ -164,7 +164,9 @@ h3 {
 }
 
 .container > h2 {
-    margin-top: clamp(1rem, 1.5rem, 2rem);
+    margin-block: clamp(3rem, 3.5rem, 5rem);
+    text-align: center;
+    font-weight: var(--fw-bold);
 }
 
 // Animacion de transicion
@@ -193,7 +195,9 @@ h3 {
     top: 0;
     z-index: 1;
     padding-block: 10px;
-    // backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    background-color: var(--clr-accent-700);
 }
 
 .nav-secondary {
@@ -202,14 +206,15 @@ h3 {
 
 .navegacion {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    gap: 5rem;
     margin-block: 0.5rem;
     text-align: center;
 }
 
 .navegacion a {
+    color: white;
     transition: color 0.2s ease;
+    font-weight: var(--fw-bold);
 }
 
 .navegacion a:hover {
@@ -228,6 +233,11 @@ h3 {
     grid-column: 2 / 3;
     padding: 1rem;
     align-self: center;
+}
+
+.contenido-derecha h1,
+.contenido-derecha h2 {
+    font-weight: var(--fw-bold);
 }
 
 /* EXPERIMENTO */
@@ -317,6 +327,40 @@ $colors: (
 }
 /* ---------------------------------- HABILIDADES ----------------------------------*/
 
+.about_me {
+    min-height: 70svh;
+}
+
+.about_me_text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.about_me_tecnologies {
+    display: flex;
+}
+
+.about_me_tecnology {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.about_me_tecnology > li {
+    border-radius: var(--border-radius-primary);
+    background-color: var(--clr-accent-700);
+    color: white;
+    padding: 0.5rem;
+    font-size: var(--step--2);
+}
+
 .habilidades_tecnologias {
     display: flex;
     flex-wrap: wrap;
@@ -327,7 +371,7 @@ $colors: (
 /* ---------------------------------- INFORMACION DE CONTACTO ----------------------------------*/
 
 .contacto-superior {
-    margin-top: 2rem;
+    min-height: 70svh;
 }
 
 .contact-form {
@@ -352,7 +396,6 @@ $colors: (
     border: none;
     background-color: transparent;
     color: var(--clr-neutral-400);
-    caret-color: white;
 }
 
 .contact-form input[type="text"],
@@ -372,8 +415,9 @@ $colors: (
     font-size: var(--step--1);
     font-weight: var(--fw-bold);
     background-color: var(--clr-accent-700);
-    color: black;
+    color: white;
     padding: 1rem;
+    border-radius: var(--border-radius-primary);
 }
 
 .contact-form > *::placeholder {
@@ -389,13 +433,12 @@ $colors: (
 // }
 
 .contact-form input[type="submit"]:hover {
-    background-color: white;
     cursor: pointer;
     transition: background 0.1s ease-in-out;
 }
 
 .contact-info > * {
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .contact-info {
@@ -427,7 +470,7 @@ $colors: (
 }
 
 .bg-circle > i {
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 /* ---------------------------------- FOOTER CON REDES SOCIALES ----------------------------------*/

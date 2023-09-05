@@ -19,10 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Posicion sticky no tapa titulos
     const navigationHeight = d.querySelector(".nav-primary").offsetHeight;
 
-    d.documentElement.style.setProperty(
-        "--scroll-padding",
-        navigationHeight + 1 + "px"
-    );
+    d.documentElement.style.setProperty("--scroll-padding", navigationHeight + "px");
 
     // Animacion de transicion
     const observer = new IntersectionObserver((entries) => {
