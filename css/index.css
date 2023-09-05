@@ -1,11 +1,12 @@
 @charset "UTF-8";
 /* ********** PROPIEDADES PERSONALIZADAS ********** */
 :root {
-  --clr-neutral-400: hsl(0, 0%, 100%);
-  --clr-accent-700: hsl(61, 100%, 46%);
+  --clr-neutral-400: hsl(0, 0%, 1%);
+  --clr-accent-700: #5a00eb;
   --ff-primary: "Be Vietnam Pro", Arial, Helvetica, sans-serif;
   --ff-body: var(var(--ff-primary));
   --ff-heading: var(var(--ff-primary));
+  --bg-clr: rgb(250, 250, 250);
   --fw-regular: 400;
   --fw-semi-bold: 500;
   --fw-bold: 700;
@@ -42,7 +43,7 @@ html {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background-color: #121212;
+  background-color: var(--bg-clr);
   font-family: var(--ff-primary);
 }
 
@@ -130,7 +131,7 @@ li {
 .two_columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 2rem;
   place-content: center;
 }
 
@@ -190,7 +191,6 @@ h3 {
   top: 0;
   z-index: 1;
   padding-block: 10px;
-  background-color: #000000;
 }
 
 .nav-secondary {
@@ -214,8 +214,12 @@ h3 {
 }
 
 /* ---------------------------------- PORTADA ----------------------------------*/
-.contenido-izquierda {
-  grid-column: 1/2;
+.portada {
+  min-height: 100svh;
+}
+
+.contenido-izquierda img {
+  border-radius: 50%;
 }
 
 .contenido-derecha {
@@ -231,8 +235,8 @@ h3 {
 }
 
 .up {
-  --color: #e5e900;
-  --hover: #e5e900;
+  --color: #5a00eb;
+  --hover: #5a00eb;
 }
 
 .contenido_derecha_curriculum {
@@ -244,7 +248,7 @@ h3 {
 }
 .contenido_derecha_curriculum:hover, .contenido_derecha_curriculum:focus {
   border-color: var(--hover);
-  color: #000000;
+  color: #ffffff;
 }
 
 .social-media {
@@ -268,24 +272,33 @@ h3 {
 /* ---------------------------------- PROYECTOS ----------------------------------*/
 .proyecto_imagen img {
   width: 100%;
+  border-radius: var(--border-radius-primary);
 }
 
 .proyecto_info {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
   justify-content: center;
-  gap: 1rem;
 }
 
 .proyecto_tecnologias {
   display: flex;
   gap: 20px;
+  margin-top: 1rem;
+}
+
+.proyecto_enlaces {
+  display: flex;
+  margin-top: 2rem;
+  gap: 2rem;
 }
 
 .proyecto_enlaces a {
   padding: 1rem;
   transition: color 0.2s ease;
   border: 0.2rem solid var(--clr-accent-700);
+  text-align: center;
 }
 
 .proyecto_enlaces a:hover {
