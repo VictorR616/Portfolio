@@ -3,8 +3,10 @@
     /* Colores */
     --clr-white: #fff;
     --clr-neutral-400: #030303;
-    --clr-accent-700: rgba(90, 0, 235);
+    --clr-accent-700: rgb(90, 0, 235);
     --clr-accent-navbar: rgba(90, 0, 235, 0.9);
+    --clr-gradient-accent: rgb(182, 0, 136);
+
     --bg-clr: rgb(250, 250, 250);
 
     /* Fuentes */
@@ -151,7 +153,7 @@ li {
 /* Estilos para diseños de columnas */
 .two_columns {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 3rem;
     place-content: center;
 }
@@ -176,6 +178,18 @@ li {
     }
     50% {
         transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes soft-pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
     }
     100% {
         transform: scale(1);
@@ -300,6 +314,8 @@ h3 {
 /* Estilos para las imágenes dentro de .contenido-izquierda */
 .contenido-izquierda img {
     border-radius: 50%;
+    box-shadow: rgba(50, 50, 93, 0.1) 0px 20px 40px -10px,
+        rgba(0, 0, 0, 0.2) 0px 12px 24px -12px;
 }
 
 /* Estilos para .contenido-derecha */
@@ -313,6 +329,18 @@ h3 {
 .contenido-derecha h1,
 .contenido-derecha h2 {
     font-weight: var(--fw-bold);
+}
+
+.contenido-derecha h1 {
+    background: linear-gradient(
+        45deg,
+        var(--clr-accent-700),
+        var(--clr-gradient-accent)
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 /* Estilos para el experimento de clase .up */
@@ -430,7 +458,8 @@ $colors: (
 
 /* Estilos para los enlaces individuales */
 .proyecto_enlaces a {
-    padding: 1rem;
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
     transition: color 0.2s ease;
     border: 0.2rem solid var(--clr-accent-700);
     text-align: center;
@@ -442,24 +471,34 @@ $colors: (
     color: var(--clr-white);
 }
 
+.proyecto_enlaces a:first-child:hover {
+    background-color: var(--clr-white);
+    color: var(--clr-accent-700);
+}
+
+.proyecto_enlaces a:nth-child(2):hover {
+    background-color: var(--clr-accent-700);
+    color: var(--clr-white);
+}
+
 /* ---------------------------------- HABILIDADES ----------------------------------*/
 
 .about_me {
-    min-height: 70svh;
+    min-height: 50svh;
 }
 
 .about_me_text {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 0.5rem;
     padding: 1.5rem;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 40px -20px,
+        rgba(0, 0, 0, 0.3) 0px 10px 60px -30px;
     border-radius: 20px;
     text-align: center;
 }
 
-.about_me_text > h2 {
+.about_me_text > h3 {
     font-weight: var(--fw-bold);
 }
 
@@ -477,7 +516,8 @@ $colors: (
     flex-wrap: wrap;
     gap: 15px;
 }
-.about_me_tecnology > li {
+
+.tag {
     border-radius: var(--border-radius-primary);
     color: var(--clr-white);
     padding: 0.5rem;
@@ -485,59 +525,59 @@ $colors: (
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
 }
 
-.about_me_tecnology > li.python {
+.python {
     background-color: #306998; /* Azul oscuro para Python */
 }
 
-.about_me_tecnology > li.django {
+.django {
     background-color: #43b02a; /* Verde para Django */
 }
 
-.about_me_tecnology > li.java {
+.java {
     background-color: #d00000; /* Rojo para Java */
 }
 
-.about_me_tecnology > li.csharp {
+.csharp {
     background-color: #8a63d2; /* Morado para C# */
 }
 
-.about_me_tecnology > li.nodejs {
+.nodejs {
     background-color: #339933; /* Verde oscuro para Node Js */
 }
 
-.about_me_tecnology > li.html {
+.html {
     background-color: #e44d26; /* Rojo para HTML */
 }
 
-.about_me_tecnology > li.css {
+.css {
     background-color: #264de4; /* Azul para CSS */
 }
 
-.about_me_tecnology > li.javascript {
+.javascript {
     background-color: #f7df1e; /* Amarillo para JavaScript */
 }
 
-.about_me_tecnology > li.react {
+.react {
     background-color: #61dafb; /* Azul claro para React */
 }
 
-.about_me_tecnology > li.vue {
+.vue {
     background-color: #42b883; /* Verde para Vue */
 }
 
-.about_me_tecnology > li.github {
+.github {
     background-color: #181717; /* Negro para Github */
 }
 
-.about_me_tecnology > li.gitlab {
+.gitlab {
     background-color: #fca121; /* Naranja para Gitlab */
 }
 
-.about_me_tecnology > li.azure {
+.azure {
     background-color: #0089d6; /* Azul para Azure */
 }
 
-.about_me_tecnology > li:hover {
+.tag:hover {
     animation: shake 1s infinite;
 }
 
@@ -550,9 +590,9 @@ $colors: (
 
 /* ---------------------------------- INFORMACION DE CONTACTO ----------------------------------*/
 
-.contacto-superior {
-    min-height: 70svh;
-}
+// .contacto-superior {
+//     min-height: 70svh;
+// }
 
 .contact-form {
     /* Variables */
@@ -605,7 +645,7 @@ $colors: (
 }
 
 // .contact-form > *[required]:invalid {
-//     border: thin solid var(--form-error-color);
+//     outline: 2px solid var(--err);
 // }
 
 // .contact-form > *[required]:valid {
@@ -614,7 +654,11 @@ $colors: (
 
 .contact-form input[type="submit"]:hover {
     cursor: pointer;
-    transition: background 0.1s ease-in-out;
+    background-color: var(--clr-white);
+    color: var(--clr-accent-700);
+    outline: 2px solid var(--clr-accent-700);
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out,
+        outline 0.2s ease-in-out;
 }
 
 .contact-info > * {
@@ -664,61 +708,56 @@ $colors: (
     gap: 3rem;
 }
 
-.footer-social a:hover {
-    color: var(--clr-neutral-400);
-    transition: 0.2s ease-in-out;
-}
-
 @media screen and (max-width: 75rem) {
-    // .portada {
-    //     grid-template-columns: 1fr; /* Cambia a una sola columna */
-    //     margin-block: 2rem;
-    // }
+    .portada {
+        grid-template-columns: 1fr; /* Cambia a una sola columna */
+        margin-block: 2rem;
+    }
 
-    // .contenido-izquierda {
-    //     grid-column: auto;
-    // }
+    .contenido-izquierda {
+        grid-column: auto;
+    }
 
-    // .contenido-derecha {
-    //     grid-column: auto;
-    // }
+    .contenido-derecha {
+        grid-column: auto;
+    }
 
-    // .imagen-izquierda {
-    //     margin: 0 auto;
-    // }
+    .imagen-izquierda {
+        margin: 0 auto;
+    }
 
-    // .proyecto {
-    //     grid-template-columns: repeat(1, 1fr);
-    // }
+    .proyecto {
+        grid-template-columns: repeat(1, 1fr);
+    }
 
-    // .proyecto .proyecto-imagen {
-    //     grid-row: 1;
-    //     margin: 0 auto;
-    // }
+    .proyecto .proyecto-imagen {
+        grid-row: 1;
+        margin: 0 auto;
+    }
 
-    // .proyecto .proyecto-info {
-    //     grid-row: 2;
-    // }
+    .proyecto .proyecto-info {
+        grid-row: 2;
+    }
 
-    // .proyecto_tecnologias {
-    //     margin-top: 1rem;
-    // }
+    .proyecto_tecnologias {
+        margin-top: 1rem;
+    }
 
-    // .proyecto_enlaces {
-    //     margin-top: 1rem;
-    // }
+    .proyecto_enlaces {
+        margin-top: 1rem;
+    }
 
-    // .proyecto_enlaces a {
-    //     padding: 0.5rem;
-    // }
+    .proyecto_enlaces a {
+        padding: 0.5rem;
+    }
 
-    // .contacto {
-    //     height: 70vh;
-    // }
+    .contacto {
+        height: 70vh;
+    }
 
-    // .contacto-superior h2 {
-    //     flex: 0 0 100%;
-    // }
+    .contacto-superior h2 {
+        flex: 0 0 100%;
+    }
 }
 
 @media screen and (max-width: 35em) {
