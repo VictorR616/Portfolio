@@ -34,18 +34,15 @@ document.addEventListener("DOMContentLoaded", function () {
     hiddenElements.forEach((el) => observer.observe(el));
 
     // Función para agregar o quitar la clase "sticky-nav" según la posición de desplazamiento
-    function toggleStickyNav() {
-        const isSticky = window.scrollY >= navPrimaryTop;
-        navPrimary.classList.toggle("sticky-nav", isSticky);
-    }
+    const navPrimary = d.querySelector(".nav-primary");
+    const scrollWatcher = d.createElement("div");
 
-    // Elemento .nav-primary y su posición superior
-    const navPrimary = document.querySelector(".nav-primary");
-    const navPrimaryTop = navPrimary.offsetTop;
+    scrollWatcher.setAttribute("data-scroll-watcher", "");
+    navPrimary.before(scrollWatcher);
 
-    // Evento de desplazamiento para llamar a toggleStickyNav
-    window.addEventListener("scroll", toggleStickyNav);
+    const navOberserver = new IntersectionObserver((entries) => {
+        navPrimary.classList.toggle("sticky-nav", !entries[0].isIntersecting);
+    });
 
-    // Llamada inicial para verificar el estado en la parte superior
-    toggleStickyNav();
+    navOberserver.observe(scrollWatcher);
 });
