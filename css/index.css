@@ -66,6 +66,8 @@ canvas,
 svg {
   display: block;
   max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /* Estilos para enlaces */
@@ -214,7 +216,7 @@ h3 {
 
 /* Estilos para el contenedor principal */
 .container {
-  width: min(100% - 3rem, 60%);
+  width: min(100% - 3rem, 120ch);
   margin-inline: auto;
 }
 
@@ -246,8 +248,6 @@ h3 {
   top: 0;
   z-index: 1;
   padding-block: 10px;
-  display: flex;
-  justify-content: center;
   background-color: transparent;
 }
 
@@ -258,9 +258,9 @@ h3 {
 /* Estilos para los elementos de navegación */
 .navegacion {
   display: flex;
-  gap: 5rem;
   margin-block: 0.5rem;
   text-align: center;
+  justify-content: space-between;
 }
 
 .navegacion a {
@@ -311,8 +311,8 @@ h3 {
 
 .contenido-derecha h1 {
   background: linear-gradient(45deg, var(--clr-accent-700), var(--clr-gradient-accent));
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
@@ -351,6 +351,7 @@ h3 {
   justify-content: space-between;
   font-weight: var(--fw-bold);
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 /* Estilos para la lista de iconos sociales .social-icons */
@@ -396,6 +397,16 @@ h3 {
 
 /* ---------------------------------- PROYECTOS ----------------------------------*/
 /* Estilos para las imágenes de proyecto */
+.proyecto {
+  margin-block: 2rem;
+}
+
+.proyecto_imagen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .proyecto_imagen img {
   width: 100%;
   border-radius: var(--border-radius-primary);
@@ -405,7 +416,7 @@ h3 {
 .proyecto_info {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.3rem;
   justify-content: center;
 }
 
@@ -420,7 +431,7 @@ h3 {
 /* Estilos para los enlaces del proyecto */
 .proyecto_enlaces {
   display: flex;
-  margin-top: 2rem;
+  margin-top: 1.25rem;
   gap: 2rem;
 }
 
@@ -457,19 +468,27 @@ h3 {
 .about_me_text {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.2rem;
   padding: 1.5rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 40px -20px, rgba(0, 0, 0, 0.3) 0px 10px 60px -30px;
   border-radius: 20px;
   text-align: center;
+  padding: 0;
+  justify-content: center;
 }
 
 .about_me_text > h3 {
   font-weight: var(--fw-bold);
 }
 
+.about_me_text > p {
+  padding: 1rem;
+}
+
 .about_me_tecnologies {
   display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .about_me_tecnologies h3 {
@@ -663,30 +682,6 @@ h3 {
   gap: 3rem;
 }
 
-@media screen and (min-width: 37.5em) {
-  .portada {
-    grid-template-columns: 1fr; /* Cambia a una sola columna */
-    margin-block: 2rem;
-  }
-  .contenido-izquierda {
-    grid-column: auto;
-  }
-  .contenido-izquierda img {
-    border-radius: var(--border-radius-primary);
-  }
-  .contenido-derecha {
-    grid-column: auto;
-  }
-  .imagen-izquierda {
-    margin: 0 auto;
-  }
-  .contacto {
-    height: 70vh;
-  }
-  .contacto-superior h2 {
-    flex: 0 0 100%;
-  }
-}
 @media screen and (width <= 37.5em) {
   .navegacion {
     display: none; /* Inicialmente oculto */
@@ -773,7 +768,7 @@ h3 {
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   }
   .proyecto {
-    gap: 0;
+    gap: 2rem;
     margin: 1rem;
     padding: 0;
   }
@@ -793,8 +788,6 @@ h3 {
     margin-block: 0.5rem;
   }
   .about_me_tecnologies {
-    display: flex;
-    flex-direction: column;
     gap: 1rem;
     flex-wrap: wrap;
   }
@@ -803,6 +796,31 @@ h3 {
   }
   .footer-social {
     margin-block: 3rem;
+  }
+}
+@media screen and (width <= 48em) {
+  .portada {
+    margin-block: 2rem;
+  }
+  .contenido-izquierda {
+    grid-column: auto;
+  }
+  .contenido-izquierda img {
+    border-radius: var(--border-radius-primary);
+  }
+  .contenido-derecha {
+    grid-column: auto;
+  }
+}
+@media screen and (width <= 64em) {
+  .contenido-izquierda {
+    grid-column: auto;
+  }
+  .contenido-izquierda img {
+    border-radius: var(--border-radius-primary);
+  }
+  .contenido-derecha {
+    grid-column: auto;
   }
 }
 /* Estilos para manejar la reducción de movimiento */
