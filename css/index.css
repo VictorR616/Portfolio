@@ -19,15 +19,15 @@
   /* Otros estilos */
   --border-radius-primary: 6px;
   /* Texto fluido */
-  --step--2: clamp(0.75rem, calc(0.55rem + 0.69vw), 1.19rem);
-  --step--1: clamp(0.78rem, calc(0.59rem + 0.81vw), 1.4rem);
-  --step-0: clamp(0.88rem, calc(0.69rem + 1.06vw), 1.75rem);
-  --step-1: clamp(1.05rem, calc(0.81rem + 1.38vw), 2.19rem);
-  --step-2: clamp(1.26rem, calc(0.95rem + 1.79vw), 2.73rem);
-  --step-3: clamp(1.51rem, calc(1.11rem + 2.31vw), 3.42rem);
-  --step-4: clamp(1.81rem, calc(1.29rem + 2.98vw), 4.27rem);
-  --step-5: clamp(2.18rem, calc(1.51rem + 3.83vw), 5.34rem);
-  --btn: clamp(2.38rem, calc(1.51rem + 2.79vw), 3rem);
+  --fs-1: clamp(0.75rem, calc(0.55rem + 0.69vw), 1.19rem);
+  --fs-2: clamp(0.78rem, calc(0.59rem + 0.81vw), 1.4rem);
+  --fs-3: clamp(0.88rem, calc(0.69rem + 1.06vw), 1.75rem);
+  --fs-4: clamp(1.05rem, calc(0.81rem + 1.38vw), 2.19rem);
+  --fs-5: clamp(1.26rem, calc(0.95rem + 1.79vw), 2.73rem);
+  --fs-6: clamp(1.51rem, calc(1.11rem + 2.31vw), 3.42rem);
+  --fs-7: clamp(1.81rem, calc(1.29rem + 2.98vw), 4.27rem);
+  --fs-8: clamp(2.18rem, calc(1.51rem + 3.83vw), 5.34rem);
+  --bs-1: clamp(2.38rem, calc(1.51rem + 2.79vw), 3rem);
 }
 
 /* ********** RESET ********** */
@@ -58,6 +58,17 @@ body {
   font-family: var(--ff-primary);
 }
 
+/* Estilos para encabezados y párrafos */
+h1,
+h2,
+p {
+  color: var(--clr-neutral);
+}
+
+h3 {
+  color: var(--clr-accent);
+}
+
 /* Estilos para elementos multimedia */
 img,
 picture,
@@ -75,6 +86,10 @@ a {
   text-decoration: none;
 }
 
+a:visited {
+  color: inherit;
+}
+
 /* Estilos para listas */
 li {
   list-style-type: none;
@@ -90,80 +105,63 @@ li {
 /* ********** CLASES UTILITARIAS ********** */
 /* ---------------------------------- TEXTO FLUIDO ----------------------------------*/
 /* Estilos para los tamaños de fuente */
-.step--2 {
-  font-size: var(--step--2);
+.fs-1 {
+  font-size: var(--fs-1);
 }
 
-.step--1 {
-  font-size: var(--step--1);
+.fs-2 {
+  font-size: var(--fs-2);
 }
 
-.step-0 {
-  font-size: var(--step-0);
+.fs-3 {
+  font-size: var(--fs-3);
 }
 
-.step-1 {
-  font-size: var(--step-1);
+.fs-4 {
+  font-size: var(--fs-4);
 }
 
-.step-2 {
-  font-size: var(--step-2);
+.fs-5 {
+  font-size: var(--fs-5);
 }
 
-.step-3 {
-  font-size: var(--step-3);
+.fs-6 {
+  font-size: var(--fs-6);
 }
 
-.step-4 {
-  font-size: var(--step-4);
+.fs-7 {
+  font-size: var(--fs-7);
 }
 
-.step-5 {
-  font-size: var(--step-5);
+.fs-8 {
+  font-size: var(--fs-8);
 }
 
-.step-btn {
-  font-size: var(--btn);
-}
-
-/* Estilos para el color del texto */
-.text-primary-400 {
-  color: var(--clr-neutral-400);
-}
-
-.text-accent-700 {
-  color: var(--clr-accent-700);
-}
-
-/* Estilos para la fuente en negrita */
-.fw-bold {
-  font-weight: var(--fw-bold);
-}
-
-.fw-semi-bold {
-  font-weight: var(--fw-semi-bold);
-}
-
-.fw-regular {
-  font-weight: var(--fw-regular);
-}
-
-/* Estilos para la esquina redondeada */
-.border-radius-primary {
-  border-radius: var(--border-radius-primary);
+.bs-1 {
+  font-size: var(--bs-1);
 }
 
 /* Estilos para diseños de columnas */
-.two_columns {
+.two-columns {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 3rem;
   place-content: center;
 }
 
-/* ********** Components ********** */
-/* ---------------------------------- GENERALES ----------------------------------*/
-/* Estilos para las animaciones */
+/* Estilos para el contenedor principal */
+.container {
+  width: min(100% - 3rem, 120ch);
+  margin-inline: auto;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+/* ---------------------------------- COMPONENTES ----------------------------------*/
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -203,25 +201,8 @@ li {
     transform: translateX(0);
   }
 }
-/* Estilos para encabezados y párrafos */
-h1,
-h2,
-p {
-  color: var(--clr-neutral);
-}
-
-h3 {
-  color: var(--clr-accent);
-}
-
-/* Estilos para el contenedor principal */
-.container {
-  width: min(100% - 3rem, 120ch);
-  margin-inline: auto;
-}
-
 /* Estilos para encabezado h2 dentro del contenedor */
-.container > h2 {
+.subtitulo-destacado {
   margin-block: 3.5rem;
   text-align: center;
   font-weight: var(--fw-bold);
@@ -241,9 +222,21 @@ h3 {
   transform: translateX(0);
 }
 
+.linkedin:hover {
+  color: #0077b5;
+}
+
+.github:hover {
+  color: #333;
+}
+
+.instagram:hover {
+  color: #bc2a8d;
+}
+
 /* ---------------------------------- NAVEGACION ----------------------------------*/
 /* Estilos para la barra de navegación */
-.nav-primary {
+.navegacion-primaria {
   position: sticky;
   top: 0;
   z-index: 1;
@@ -251,24 +244,8 @@ h3 {
   background-color: transparent;
 }
 
-.nav-secondary {
+.navegacion-secundaria {
   display: none;
-}
-
-/* Estilos para los elementos de navegación */
-.navegacion {
-  display: flex;
-  margin-block: 0.5rem;
-  text-align: center;
-  justify-content: space-between;
-}
-
-.navegacion a {
-  font-weight: var(--fw-bold);
-}
-
-.navegacion a:hover {
-  color: var(--clr-neutral-400);
 }
 
 /* Estilos para la barra de navegación "sticky" */
@@ -276,12 +253,29 @@ h3 {
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   background-color: var(--clr-accent-navbar);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .sticky-nav a {
   color: var(--clr-white);
   transition: color 0.3s ease;
+}
+
+/* Estilos para los elementos de navegación */
+.navegacion-links {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  margin-block: 0.5rem;
+}
+
+.navegacion-links a {
+  font-weight: var(--fw-bold);
+}
+
+.navegacion-links a:hover,
+.navegacion-links a:focus {
+  color: var(--clr-neutral-400);
 }
 
 /* ---------------------------------- PORTADA ----------------------------------*/
@@ -290,30 +284,31 @@ h3 {
   min-height: 100vh;
 }
 
-/* Estilos para las imágenes dentro de .contenido-izquierda */
-.contenido-izquierda img {
+/* Estilos para las imágenes dentro de .perfil-imagen */
+.perfil-imagen img {
   border-radius: 50%;
   box-shadow: rgba(50, 50, 93, 0.1) 0px 20px 40px -10px, rgba(0, 0, 0, 0.2) 0px 12px 24px -12px;
 }
 
-/* Estilos para .contenido-derecha */
-.contenido-derecha {
+/* Estilos para .perfil-informacion */
+.perfil-informacion {
   grid-column: 2/3;
   padding: 1rem;
   align-self: center;
 }
 
-/* Estilos para los encabezados en .contenido-derecha */
-.contenido-derecha h1,
-.contenido-derecha h2 {
-  font-weight: var(--fw-bold);
-}
-
-.contenido-derecha h1 {
+/* Estilos para los encabezados en .perfil-informacion */
+.perfil-informacion h1 {
   background: linear-gradient(45deg, var(--clr-accent-700), var(--clr-gradient-accent));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  font-weight: var(--fw-bold);
+}
+
+.perfil-informacion h2 {
+  font-weight: var(--fw-bold);
+  margin-block: 0.5rem;
 }
 
 /* Estilos para el experimento de clase .up */
@@ -329,22 +324,23 @@ h3 {
   --hover: #5a00eb;
 }
 
-/* Estilos para .contenido_derecha_curriculum */
-.contenido_derecha_curriculum {
+/* Estilos para .perfil-curriculum */
+.perfil-curriculum {
   display: inline-block;
   color: var(--clr-accent-700);
   margin-top: clamp(1rem, 10%, 3.5rem);
   padding: 0.75em 2em;
   border: 2px solid var(--clr-accent-700);
   transition: 0.25s;
+  font-weight: var(--fw-bold);
 }
-.contenido_derecha_curriculum:hover, .contenido_derecha_curriculum:focus {
+.perfil-curriculum:hover, .perfil-curriculum:focus {
   border-color: var(--hover);
   color: #ffffff;
 }
 
-/* Estilos para el contenedor .social-media */
-.social-media {
+/* Estilos para el contenedor .perfil-social */
+.perfil-social {
   display: flex;
   margin-block: 2rem;
   align-items: baseline;
@@ -354,74 +350,60 @@ h3 {
   flex-wrap: wrap;
 }
 
-/* Estilos para la lista de iconos sociales .social-icons */
-.social-icons {
+/* Estilos para la lista de iconos sociales .perfil-social-icons */
+.perfil-social-icons {
   display: flex;
   gap: 2rem;
 }
 
-/* Estilos para los elementos de lista .social-icons li */
-.social-icons li {
+/* Estilos para los elementos de lista .perfil-social-icons li */
+.perfil-social-icons li {
   display: flex;
   align-items: center;
 }
 
-/* Estilos para los enlaces .social-icons a */
-.social-icons a {
+/* Estilos para los enlaces .perfil-social-icons a */
+.perfil-social-links {
   display: flex;
   align-items: center;
   text-decoration: none;
   color: inherit;
 }
 
-/* Estilos al hacer hover en los enlaces .social-icons a */
-.social-icons a:hover {
+/* Estilos al hacer hover en los enlaces .perfil-social-icons a */
+.perfil-social-icons a:hover {
   animation: pulse 1s infinite;
   transition: color 0.2s ease-in-out;
 }
 
-/* Estilos para el primer enlace al hacer hover */
-.social-icons li:nth-child(1) a:hover {
-  color: #0077b5; /* Color de LinkedIn al hacer hover */
-}
-
-/* Estilos para el segundo enlace al hacer hover */
-.social-icons li:nth-child(2) a:hover {
-  color: #333; /* Color de GitHub al hacer hover */
-}
-
-/* Estilos para el tercer enlace al hacer hover */
-.social-icons li:nth-child(3) a:hover {
-  color: #bc2a8d; /* Color de Instagram al hacer hover */
-}
-
 /* ---------------------------------- PROYECTOS ----------------------------------*/
-/* Estilos para las imágenes de proyecto */
 .proyecto {
   margin-block: 2rem;
 }
 
-.proyecto_imagen {
+.proyecto-imagen {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.proyecto_imagen img {
+.proyecto-imagen img {
   width: 100%;
   border-radius: var(--border-radius-primary);
 }
 
 /* Estilos para la información del proyecto */
-.proyecto_info {
-  display: flex;
-  flex-direction: column;
+.proyecto-info {
   gap: 0.3rem;
   justify-content: center;
 }
 
+.proyecto-info > h3 {
+  font-weight: var(--fw-bold);
+}
+
 /* Estilos para las tecnologías del proyecto */
-.proyecto_tecnologias {
+.proyecto-tecnologias {
   display: flex;
   gap: 20px;
   margin-top: 1rem;
@@ -429,45 +411,44 @@ h3 {
 }
 
 /* Estilos para los enlaces del proyecto */
-.proyecto_enlaces {
+.proyecto-enlaces {
   display: flex;
   margin-top: 1.25rem;
   gap: 2rem;
 }
 
 /* Estilos para los enlaces individuales */
-.proyecto_enlaces a {
+.proyecto-enlaces a {
   padding-block: 0.5rem;
   padding-inline: 1rem;
   transition: color 0.2s ease;
   border: 0.2rem solid var(--clr-accent-700);
   text-align: center;
+  font-weight: var(--fw-bold);
 }
 
 /* Estilos para el primer enlace */
-.proyecto_enlaces a:first-child {
+.proyecto-enlaces a:first-child {
   background-color: var(--clr-accent-700);
   color: var(--clr-white);
 }
 
-.proyecto_enlaces a:first-child:hover {
+.proyecto-enlaces a:first-child:hover {
   background-color: var(--clr-white);
   color: var(--clr-accent-700);
 }
 
-.proyecto_enlaces a:nth-child(2):hover {
+.proyecto-enlaces a:nth-child(2):hover {
   background-color: var(--clr-accent-700);
   color: var(--clr-white);
 }
 
 /* ---------------------------------- HABILIDADES ----------------------------------*/
-.about_me {
+.sobre-mi {
   min-height: 50svh;
 }
 
-.about_me_text {
-  display: flex;
-  flex-direction: column;
+.sobre-mi-info {
   gap: 0.2rem;
   padding: 1.5rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 40px -20px, rgba(0, 0, 0, 0.3) 0px 10px 60px -30px;
@@ -477,25 +458,23 @@ h3 {
   justify-content: center;
 }
 
-.about_me_text > h3 {
+.sobre-mi-info > h3 {
   font-weight: var(--fw-bold);
 }
 
-.about_me_text > p {
+.sobre-mi-info > p {
   padding: 1rem;
 }
 
-.about_me_tecnologies {
-  display: flex;
-  flex-direction: column;
+.sobre-mi-stack {
   gap: 2rem;
 }
 
-.about_me_tecnologies h3 {
+.sobre-mi-stack h3 {
   font-weight: var(--fw-bold);
 }
 
-.about_me_tecnology {
+.sobre-mi-tecnologias {
   margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
@@ -506,64 +485,65 @@ h3 {
   border-radius: var(--border-radius-primary);
   color: var(--clr-white);
   padding: 0.5rem;
-  font-size: var(--step--2);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
-}
-
-.python {
-  background-color: #306998; /* Azul oscuro para Python */
-}
-
-.django {
-  background-color: #43b02a; /* Verde para Django */
-}
-
-.java {
-  background-color: #d00000; /* Rojo para Java */
-}
-
-.csharp {
-  background-color: #8a63d2; /* Morado para C# */
-}
-
-.nodejs {
-  background-color: #339933; /* Verde oscuro para Node Js */
-}
-
-.html {
-  background-color: #e44d26; /* Rojo para HTML */
-}
-
-.css {
-  background-color: #264de4; /* Azul para CSS */
-}
-
-.javascript {
-  background-color: #f7df1e; /* Amarillo para JavaScript */
-}
-
-.react {
-  background-color: #61dafb; /* Azul claro para React */
-}
-
-.vue {
-  background-color: #42b883; /* Verde para Vue */
-}
-
-.github {
-  background-color: #181717; /* Negro para Github */
-}
-
-.gitlab {
-  background-color: #fca121; /* Naranja para Gitlab */
-}
-
-.azure {
-  background-color: #0089d6; /* Azul para Azure */
+  font-size: var(fs-1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Agrega una sombra suave */
 }
 
 .tag:hover {
   animation: shake 1s infinite;
+}
+
+.tag-python {
+  background-color: #306998;
+}
+
+.tag-django {
+  background-color: #43b02a;
+}
+
+.tag-java {
+  background-color: #d00000;
+}
+
+.tag-csharp {
+  background-color: #8a63d2;
+}
+
+.tag-nodejs {
+  background-color: #339933;
+}
+
+.tag-html {
+  background-color: #e44d26;
+}
+
+.tag-css {
+  background-color: #264de4;
+}
+
+.tag-javascript {
+  background-color: #f7df1e;
+}
+
+.tag-react {
+  background-color: #61dafb;
+}
+
+.tag-vue {
+  background-color: #42b883;
+}
+
+.tag-github {
+  background-color: #181717;
+}
+
+.tag-gitlab {
+  background-color: #fca121;
+}
+
+.tag-azure {
+  background-color: #0089d6;
 }
 
 .habilidades_tecnologias {
@@ -582,15 +562,13 @@ h3 {
   --form-error-color: #f44336;
   --form-border-color: #222;
   /* Propiedades */
-  display: flex;
-  flex-direction: column;
   gap: 1.5rem;
   padding: 1rem;
 }
 
 .contact-form > * {
   width: 100%;
-  font-size: var(--step--2);
+  font-size: var(fs-1);
   border-radius: 0.25rem;
   border: none;
   background-color: transparent;
@@ -601,17 +579,19 @@ h3 {
 .contact-form input[type=email],
 .contact-form textarea {
   padding: 1rem;
-  outline: 2px solid var(--clr-accent-700); /* Quita el contorno predeterminado del foco */
+  outline: 2px solid var(--clr-accent-700);
+  /* Quita el contorno predeterminado del foco */
 }
 
 .contact-form textarea {
   resize: none;
-  outline: 2px solid var(--clr-accent-700); /* Quita el contorno predeterminado del foco */
+  outline: 2px solid var(--clr-accent-700);
+  /* Quita el contorno predeterminado del foco */
 }
 
 .contact-form input[type=submit] {
   flex-basis: 1;
-  font-size: var(--step--1);
+  font-size: var(fs-2);
   font-weight: var(--fw-bold);
   background-color: var(--clr-accent-700);
   color: var(--clr-white);
@@ -635,40 +615,46 @@ h3 {
   transition: background 0.2s ease-in-out, color 0.2s ease-in-out, outline 0.2s ease-in-out;
 }
 
-.contact-info {
-  display: flex;
-  flex-direction: column;
+.contacto-info {
   gap: 2rem;
   padding: 1rem;
 }
 
-.contact-info > h3 {
+.contacto-info > h3 {
   font-weight: var(--fw-semi-bold);
 }
 
-.info {
+.contacto-info-icono {
   display: flex;
   gap: 1rem;
-  align-items: center;
+  align-items: baseline;
 }
 
-.info > p > span {
-  color: rgb(124, 124, 124);
+.contacto-info-texto > a {
+  color: rgb(99, 99, 99);
 }
 
-.bg-circle {
-  position: relative; /* Establece la posición relativa para el contenedor */
-  width: 50px; /* Ajusta el ancho y alto según tus necesidades */
+.contacto-info-datos {
+  display: flex;
+  gap: 1rem;
+}
+
+.circulo-fondo {
+  position: relative;
+  /* Establece la posición relativa para el contenedor */
+  width: 50px;
+  /* Ajusta el ancho y alto según tus necesidades */
   height: 50px;
   background-color: var(--clr-accent-700);
   border-radius: 50%;
-  display: flex; /* Utiliza flexbox para centrar el contenido vertical y horizontalmente */
+  display: flex;
+  /* Utiliza flexbox para centrar el contenido vertical y horizontalmente */
   align-items: center;
   justify-content: center;
   aspect-ratio: 1;
 }
 
-.bg-circle > i {
+.circulo-fondo > i {
   color: var(--clr-white);
 }
 
@@ -683,48 +669,44 @@ h3 {
 }
 
 @media screen and (width <= 37.5em) {
-  .navegacion {
-    display: none; /* Inicialmente oculto */
+  .navegacion-links {
+    display: none;
+    /* Inicialmente oculto */
   }
   .sticky-nav {
     display: none;
   }
-  .contenido-izquierda {
+  .perfil-imagen {
     grid-column: auto;
   }
-  .contenido-izquierda img {
+  .perfil-imagen img {
     border-radius: var(--border-radius-primary);
   }
-  .contenido-derecha {
+  .perfil-informacion {
     grid-column: auto;
   }
-  .social-media {
-    flex-direction: column; /* Cambiar a dirección de columna cuando el ancho sea <= 35rem */
-  }
   /* Estilos del menú de hamburguesa */
-  .nav-secondary {
+  .navegacion-secundaria {
     display: block;
   }
   .menu-toggle {
     cursor: pointer;
-    display: flex;
     margin-block: 2rem;
     padding-block: 5px;
-    flex-direction: column;
     justify-content: space-between;
     width: 35px;
     height: 30px;
     background-color: transparent;
     outline: none;
   }
-  .navegacion {
+  .navegacion-links {
     padding: 0;
     margin: 0;
   }
-  .navegacion a {
+  .navegacion-links a {
     color: var(--clr-white);
   }
-  .navegacion a:hover {
+  .navegacion-links a:hover {
     color: var(--clr-accent-700);
   }
   .bar {
@@ -734,7 +716,8 @@ h3 {
     transition: 0.4s;
   }
   .open {
-    opacity: 0.9; /* Hace que el menú sea visible */
+    opacity: 0.9;
+    /* Hace que el menú sea visible */
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -744,22 +727,26 @@ h3 {
     right: 0;
     bottom: 0;
     z-index: 2;
-    background-color: #000000; /* Fondo del menú */
+    background-color: #000000;
+    /* Fondo del menú */
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100vh;
-    transition: opacity 0.4s ease; /* Agregamos una transición de opacidad */
+    transition: opacity 0.4s ease;
+    /* Agregamos una transición de opacidad */
   }
   .open li {
-    padding-block: 20px; /* Ajusta el espaciado uniforme entre elementos */
+    padding-block: 20px;
+    /* Ajusta el espaciado uniforme entre elementos */
     text-align: center;
     width: 100%;
   }
   .open a {
     opacity: 1;
     color: var(--clr-accent-700);
-    font-size: 1.5rem; /* Tamaño de fuente para los proyecto_enlaces */
+    font-size: 1.5rem;
+    /* Tamaño de fuente para los proyecto-enlaces */
     display: block;
   }
   .open a:hover {
@@ -772,26 +759,24 @@ h3 {
     margin: 1rem;
     padding: 0;
   }
-  .proyecto_imagen:nth-child(2) {
+  .proyecto-imagen:nth-child(2) {
     grid-row: 1/2;
   }
-  .proyecto_info:nth-child(2) {
+  .proyecto-info:nth-child(2) {
     grid-row: 2/3;
   }
-  .proyecto_info {
+  .proyecto-info {
     margin-top: 0.5rem;
   }
-  .proyecto_enlaces {
-    display: flex;
+  .proyecto-enlaces {
     flex-direction: column;
     gap: 1rem;
     margin-block: 0.5rem;
   }
-  .about_me_tecnologies {
+  .sobre-mi-stack {
     gap: 1rem;
-    flex-wrap: wrap;
   }
-  .contacto-superior > * {
+  .contacto > * {
     padding: 0;
   }
   .footer-social {
@@ -802,24 +787,29 @@ h3 {
   .portada {
     margin-block: 2rem;
   }
-  .contenido-izquierda {
+  .perfil-imagen {
     grid-column: auto;
   }
-  .contenido-izquierda img {
+  .perfil-imagen img {
     border-radius: var(--border-radius-primary);
   }
-  .contenido-derecha {
+  .perfil-informacion {
     grid-column: auto;
+  }
+  .contacto-info-datos {
+    display: flex;
+    gap: 0.25rem;
+    flex-wrap: wrap;
   }
 }
 @media screen and (width <= 64em) {
-  .contenido-izquierda {
+  .perfil-imagen {
     grid-column: auto;
   }
-  .contenido-izquierda img {
+  .perfil-imagen img {
     border-radius: var(--border-radius-primary);
   }
-  .contenido-derecha {
+  .perfil-informacion {
     grid-column: auto;
   }
 }
@@ -828,5 +818,4 @@ h3 {
   .hidden {
     transition: none;
   }
-}
-/* Mobile First con min-width, del valor que des hacia arriba *//*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */

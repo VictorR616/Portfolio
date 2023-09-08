@@ -4,24 +4,31 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Victor Rojas</title>
-		<link rel="stylesheet" href="css/index.css" />
+    
+		<!------------------------- FAVICON ------------------------->
+
+    
+    <!------------------------- FAVICON ------------------------->
+		<!------------------------- IMPORTACION DE FONT AWESOME ------------------------->
+    <link rel="stylesheet" href="css/index.css" />
 		<!------------------------- IMPORTACION DE FONT AWESOME ------------------------->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 		<!------------------------- IMPORTACION DE GOOGLE FONT ------------------------->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+		<!------------------------- IMPORTACION DE GOOGLE FONT ------------------------->
 	</head>
 	<body>
 		<!------------------------- NAVEGACION ------------------------->
-		<header class="nav-secondary container">
+		<header class="navegacion-secundaria container">
 			<nav>
-				<div class="menu-toggle" id="menu-toggle">
+				<div class="menu-toggle flex-column" id="menu-toggle">
 					<span class="bar"></span>
 					<span class="bar"></span>
 					<span class="bar"></span>
 				</div>
-				<ul role="list" class="navegacion step--1" id="navegacion">
+				<ul role="list" class="navegacion-links fs-2" id="navegacion-links">
 					<li>
 						<a class="" href="#portada">Home</a>
 					</li>
@@ -39,32 +46,32 @@
 		</header>
 		<!------------------------- NAVEGACION ------------------------->
 		<!------------------------- PORTADA ------------------------->
-		<section class="container  hidden" id="portada">
-			<section class="portada two_columns">
-				<article class="contenido-izquierda">
+		<section class="container hidden" id="portada">
+			<section class="portada two-columns">
+				<article class="perfil-imagen">
 					<img loading="lazy" src="assets/Perfil.png" alt="Imagen de Victor Rojas" class="imagen-izquierda" />
 				</article>
-				<article class="contenido-derecha">
-					<h1 class="step-4  ">Victor Rojas</h1>
-					<h2 class="step-0  "> FullStack Web Developer </h2>
-					<p class="step--1  "> Soy un arquitecto de la web, tejiendo redes digitales con Código. Mi pasión es crear la infraestructura digital del futuro. </p>
-					<a class="contenido_derecha_curriculum btn-effect step--1 up  fw-bold border-radius-primary" href="#">
+				<article class="perfil-informacion">
+					<h1 class="fs-6">Victor Rojas</h1>
+					<h2 class="fs-2"> FullStack Web Developer </h2>
+					<p class="fs-2"> Soy un arquitecto de la web, tejiendo redes digitales con Código. Mi pasión es crear la infraestructura digital del futuro. </p>
+					<a class="perfil-curriculum fs-2 up" href="#">
 						<i class="fa-solid fa-download"></i> Ver curriculum </a>
-					<div class="social-media">
-						<p class="step-0">Social Media</p>
-						<ul role="list" aria-label="Social links" class="social-icons">
+					<div class="perfil-social">
+						<p class="fs-2">Social Media</p>
+						<ul role="list" aria-label="Social links" class="perfil-social-icons">
 							<li>
-								<a aria-label="linkedin" class="step-btn" href="">
+								<a aria-label="linkedin" class="bs-1 linkedin" href="">
 									<i class="fa-brands fa-linkedin"></i>
 								</a>
 							</li>
 							<li>
-								<a aria-label="github" class="step-btn" href="">
+								<a aria-label="github" class="bs-1 github" href="">
 									<i class="fa-brands fa-github"></i>
 								</a>
 							</li>
 							<li>
-								<a aria-label="instagram" class="step-btn" href="">
+								<a aria-label="instagram" class="bs-1 instagram" href="">
 									<i class="fa-brands fa-instagram"></i>
 								</a>
 							</li>
@@ -75,9 +82,9 @@
 		</section>
 		<!------------------------- PORTADA ------------------------->
 		<!------------------------- NAVEGACION MOVIL ------------------------->
-		<header class=" nav-primary">
+		<header class=" navegacion-primaria">
 			<nav class="container">
-				<ul class="navegacion step--1" aria-label="Primary" role="list">
+				<ul class="navegacion-links fs-2" aria-label="Primary" role="list">
 					<li>
 						<a class="" href="#portada">Home</a>
 					</li>
@@ -97,72 +104,71 @@
 		<main>
 			<!------------------------- PROYECTOS ------------------------->
 			<section class="container hidden" id="proyectos">
-				<h2 class="step-4 ">Proyectos</h2>
-				<article class="proyecto two_columns">
-					<div class="proyecto_imagen">
+				<h2 class="fs-6 subtitulo-destacado">Proyectos</h2>
+				<article class="proyecto two-columns">
+					<div class="proyecto-imagen">
 						<img loading="lazy" src="assets/Fondo.jpg" alt="" />
 					</div>
-					<div class="proyecto_info">
-						<div class="proyecto_info_superior"></div>
-						<h3 class="step-2 fw-bold ">Proyecto 1</h3>
-						<p class="step--1 "> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni sint perferendis labore quos quaerat praesentium ducimus modi ab, quam nisi. </p>
-						<ul class="proyecto_tecnologias ">
-							<li class="tag python">Python</li>
-							<li class="tag django">Django</li>
-							<li class="tag java">Java</li>
-							<li class="tag csharp">C#</li>
-							<li class="tag nodejs">Node Js</li>
+					<div class="proyecto-info flex-column">
+						<h3 class="fs-4 ">Proyecto 1</h3>
+						<p class="fs-2"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni sint perferendis labore quos quaerat praesentium ducimus modi ab, quam nisi. </p>
+						<ul class="proyecto-tecnologias ">
+							<li class="tag tag-python">Python</li>
+							<li class="tag tag-django">Django</li>
+							<li class="tag tag-java">Java</li>
+							<li class="tag tag-csharp">C#</li>
+							<li class="tag tag-nodejs">Node Js</li>
 						</ul>
-						<div class="proyecto_enlaces">
-							<a class="step--1 fw-bold border-radius-primary " href="">
+						<div class="proyecto-enlaces">
+							<a class="fs-2 border-radius-primary " href="">
 								<i class="fa-solid fa-eye"></i> Ver </a>
-							<a class="step--1 fw-bold border-radius-primary " href="">
+							<a class="fs-2 border-radius-primary " href="">
 								<i class="fa-brands fa-github"></i> Código </a>
 						</div>
 					</div>
 				</article>
-				<article class="proyecto two_columns">
-					<div class="proyecto_info">
-						<h3 class="step-2 fw-bold ">Proyecto 2</h3>
-						<p class="step--1 "> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni sint perferendis labore quos quaerat praesentium ducimus modi ab, quam nisi. </p>
-						<ul class="proyecto_tecnologias ">
-							<li class="tag python">Python</li>
-							<li class="tag django">Django</li>
-							<li class="tag java">Java</li>
-							<li class="tag csharp">C#</li>
-							<li class="tag nodejs">Node Js</li>
+				<article class="proyecto two-columns">
+					<div class="proyecto-info flex-column">
+						<h3 class="fs-4 ">Proyecto 2</h3>
+						<p class="fs-2 "> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni sint perferendis labore quos quaerat praesentium ducimus modi ab, quam nisi. </p>
+						<ul class="proyecto-tecnologias ">
+							<li class="tag tag-python">Python</li>
+							<li class="tag tag-django">Django</li>
+							<li class="tag tag-java">Java</li>
+							<li class="tag tag-csharp">C#</li>
+							<li class="tag tag-nodejs">Node Js</li>
 							<!-- Agrega más tecnologías frontend si es necesario -->
 						</ul>
-						<div class="proyecto_enlaces">
-							<a class="step--1 fw-bold border-radius-primary " href="">
+						<div class="proyecto-enlaces">
+							<a class="fs-2 border-radius-primary " href="">
 								<i class="fa-solid fa-eye"></i> Ver </a>
-							<a class="step--1 fw-bold border-radius-primary " href="">
+							<a class="fs-2 border-radius-primary " href="">
 								<i class="fa-brands fa-github"></i> Código </a>
 						</div>
 					</div>
-					<div class="proyecto_imagen">
+					<div class="proyecto-imagen">
 						<img loading="lazy" src="assets/Fondo.jpg" alt="" />
 					</div>
 				</article>
-				<article class="proyecto two_columns">
-					<div class="proyecto_imagen">
+				<article class="proyecto two-columns">
+					<div class="proyecto-imagen">
 						<img loading="lazy" src="assets/Fondo.jpg" alt="" />
 					</div>
-					<div class="proyecto_info">
-						<h3 class="step-2 fw-bold ">Proyecto 3</h3>
-						<p class="step--1 "> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni sint perferendis labore quos quaerat praesentium ducimus modi ab, quam nisi. </p>
-						<ul class="proyecto_tecnologias ">
-							<li class="tag python">Python</li>
-							<li class="tag django">Django</li>
-							<li class="tag java">Java</li>
-							<li class="tag csharp">C#</li>
-							<li class="tag nodejs">Node Js</li>
+					<div class="proyecto-info flex-column">
+						<h3 class="fs-4">Proyecto 3</h3>
+						<p class="fs-2"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni sint perferendis labore quos quaerat praesentium ducimus modi ab, quam nisi. </p>
+						<ul class="proyecto-tecnologias ">
+							<li class="tag tag-python">Python</li>
+							<li class="tag tag-django">Django</li>
+							<li class="tag tag-java">Java</li>
+							<li class="tag tag-csharp">C#</li>
+							<li class="tag tag-nodejs">Node Js</li>
 							<!-- Agrega más tecnologías frontend si es necesario -->
 						</ul>
-						<div class="proyecto_enlaces">
-							<a class="step--1 fw-bold border-radius-primary " href="">
+						<div class="proyecto-enlaces">
+							<a class="fs-2 border-radius-primary " href="">
 								<i class="fa-solid fa-eye"></i> Ver </a>
-							<a class="step--1 fw-bold border-radius-primary " href="">
+							<a class="fs-2 border-radius-primary " href="">
 								<i class="fa-brands fa-github"></i> Código </a>
 						</div>
 					</div>
@@ -171,40 +177,40 @@
 			<!------------------------- PROYECTOS ------------------------->
 			<!------------------------- HABILIDADES ------------------------->
 			<section class="container hidden" id="habilidades">
-				<h2 class="step-4 ">habilidades</h2>
-				<section class="about_me two_columns">
-					<article class="about_me_text">
-						<h3 class="step-2">Sobre Mí</h3>
-						<p class="step--1">¡Hola! Soy Victor Rojas, un ingeniero informático con experiencia en desarrollo web frontend y backend, así como en ingeniería de datos.👨‍💻 </p>
-						<p class="step--1"> Además de mi pasión por la tecnología, disfruto 🎮 de los videojuegos de estrategia y tengo un fuerte gusto por la música metal. 🤟 </p>
+				<h2 class="fs-6 subtitulo-destacado">habilidades</h2>
+				<section class="sobre-mi two-columns">
+					<article class="sobre-mi-info flex-column">
+						<h3 class="fs-4">Sobre Mí</h3>
+						<p class="fs-2">¡Hola! Soy Victor Rojas, un ingeniero informático con experiencia en desarrollo web frontend y backend, así como en ingeniería de datos.👨‍💻 </p>
+						<p class="fs-2"> Además de mi pasión por la tecnología, disfruto 🎮 de los videojuegos de estrategia y me gusta la música metal. 🤟 </p>
 					</article>
-					<article class="about_me_tecnologies">
+					<article class="sobre-mi-stack flex-column">
 						<div>
-							<h3 class="step-1">Backend</h3>
-							<ul class="about_me_tecnology">
-								<li class="tag python">Python</li>
-								<li class="tag django">Django</li>
-								<li class="tag java">Java</li>
-								<li class="tag csharp">C#</li>
-								<li class="tag nodejs">Node Js</li>
+							<h3 class="fs-3">Backend</h3>
+							<ul class="sobre-mi-tecnologias">
+								<li class="tag tag-python">Python</li>
+								<li class="tag tag-django">Django</li>
+								<li class="tag tag-java">Java</li>
+								<li class="tag tag-csharp">C#</li>
+								<li class="tag tag-nodejs">Node Js</li>
 							</ul>
 						</div>
 						<div>
-							<h3 class="step-1">Frontend</h3>
-							<ul class="about_me_tecnology">
-								<li class="tag html">HTML</li>
-								<li class="tag css">CSS</li>
-								<li class="tag javascript">JavaScript</li>
-								<li class="tag react">React</li>
-								<li class="tag vue">Vue</li>
+							<h3 class="fs-3">Frontend</h3>
+							<ul class="sobre-mi-tecnologias">
+								<li class="tag tag-html">HTML</li>
+								<li class="tag tag-css">CSS</li>
+								<li class="tag tag-javascript">JavaScript</li>
+								<li class="tag tag-react">React</li>
+								<li class="tag tag-vue">Vue</li>
 							</ul>
 						</div>
 						<div>
-							<h3 class="step-1">Devops</h3>
-							<ul class="about_me_tecnology">
-								<li class="tag github">Github</li>
-								<li class="tag gitlab">Gitlab</li>
-								<li class="tag azure">Azure</li>
+							<h3 class="fs-3">Devops</h3>
+							<ul class="sobre-mi-tecnologias">
+								<li class="tag tag-github">Github</li>
+								<li class="tag tag-gitlab">Gitlab</li>
+								<li class="tag tag-azure">Azure</li>
 							</ul>
 						</div>
 					</article>
@@ -213,44 +219,54 @@
 			<!------------------------- HABILIDADES ------------------------->
 			<!------------------------- INFORMACION DE CONTACTO ------------------------->
 			<section class="container hidden" id="contacto">
-				<h2 class="step-4 ">Información de contacto</h2>
-				<section class="contacto-superior two_columns">
-					<form class="contact-form" action="https://formsubmit.co/your@email.com" method="POST">
+				<h2 class="fs-6 subtitulo-destacado">Información de contacto</h2>
+				<section class="contacto two-columns">
+					<form class="contact-form flex-column" action="https://formsubmit.co/your@email.com" method="POST">
 						<input type="text" name="nombre" placeholder="Escribe tu nombre" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" title="Nombre sólo acepta letras y espacios en blanco" required />
 						<input type="email" name="correo" placeholder="Escribe tu correo" pattern="^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$" title="Formato de correo inválido" required />
 						<textarea name="comentarios" placeholder="Escribe tu comentarios" cols="30" rows="10" required></textarea>
 						<input type="submit" />
 					</form>
-					<section class="contact-info">
-						<h3 class="step-1">Estemos en contacto</h3>
-						<div class="info">
-							<div class="bg-circle">
-								<i class="fa-solid fa-location-dot step--1"></i>
+					<section class="contacto-info flex-column">
+						<h3 class="fs-3">Estemos en contacto</h3>
+
+                        
+						
+                        <div class="contacto-info-icono">
+							<div class="circulo-fondo">
+								<i class="fa-solid fa-location-dot fs-2"></i>
 							</div>
-							<p class="step--2">
-								<strong>Dirección: </strong>
-								<span>Villa Alemana, Región Valparaíso, Chile</span>
-							</p>
+                            <div class="contacto-info-datos">
+                                <p class="fs-1 contacto-info-texto" >
+                                    <strong>Dirección:</strong>
+                                    <address class="fs-1">Villa Alemana, Región Valparaíso, Chile</address>
+                                </p>
+                            </div>
 						</div>
-						<div class="info">
-							<div class="bg-circle">
-								<i class="fa-solid fa-phone step--1"></i>
-							</div>
-							<p class="step--2">
-								<strong>Telefono: </strong>
-								<span>+569 95885640</span>
-							</p>
-						</div>
-						<div class="info">
-							<div class="bg-circle">
-								<i class="fa-solid fa-envelope step--1"></i>
-							</div>
-							<p class="step--1">
-								<strong>Email: </strong>
-								<span>Victor616rojas@gmail.com</span>
-							</p>
-						</div>
-						</div>
+                        <div class="contacto-info-icono">
+                            <div class="circulo-fondo">
+                                <i class="fa-solid fa-envelope fs-2"></i>
+                            </div>
+                            <div class="contacto-info-datos">
+                                <p class="fs-1 contacto-info-texto">
+                                    <strong>Telefono: </strong>
+                                    <a class="fs-1" href="tel:+56995885640">+56995885640</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contacto-info-icono">
+                            <div class="circulo-fondo">
+                                <i class="fa-solid fa-envelope fs-2"></i>
+                            </div>
+                            <div class="contacto-info-datos">
+                                <p class="fs-1 contacto-info-texto">
+                                    <strong>Email: </strong>
+                                    <a class="fs-1" href="mailto:Victor616rojas@gmail.com">Victor616rojas@gmail.com</a>
+                                </p>
+                            </div>
+                        </div>
+							
 					</section>
 				</section>
 			</section>
@@ -259,19 +275,19 @@
 		<!------------------------- FOOTER CON REDES SOCIALES ------------------------->
 		<footer>
 			<section class="hidden">
-				<ul role="list" aria-label="Social Links" class="footer-social social-icons">
+				<ul role="list" aria-label="Social Links" class="footer-social perfil-social-icons">
 					<li>
-						<a aria-label="linkedin" class="step-btn " href="https://www.facebook.com/tu_perfil_de_facebook" target="_blank">
+						<a aria-label="linkedin" class="bs-1 " href="https://www.facebook.com/tu_perfil_de_facebook" target="_blank">
 							<i class="fa-brands fa-linkedin"></i>
 						</a>
 					</li>
 					<li>
-						<a aria-label="github" class="step-btn " href="https://twitter.com/tu_perfil_de_twitter" target="_blank">
+						<a aria-label="github" class="bs-1 " href="https://twitter.com/tu_perfil_de_twitter" target="_blank">
 							<i class="fa-brands fa-github"></i>
 						</a>
 					</li>
 					<li>
-						<a aria-label="instagram" class="step-btn " href="https://www.linkedin.com/in/tu_perfil_de_linkedin" target="_blank">
+						<a aria-label="instagram" class="bs-1 " href="https://www.linkedin.com/in/tu_perfil_de_linkedin" target="_blank">
 							<i class="fa-brands fa-instagram"></i>
 						</a>
 					</li>

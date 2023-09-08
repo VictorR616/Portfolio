@@ -4,20 +4,20 @@ document.addEventListener("DOMContentLoaded", function () {
         // Si el elemento objetivo del evento coincide con el selector de menuToggle
         if (e.target.matches("#menu-toggle") || e.target.matches("#menu-toggle *")) {
             // Alterna la clase "open" en el elemento correspondiente a menu y menuToggle
-            d.querySelector(".navegacion").classList.toggle("open");
+            d.querySelector(".navegacion-links").classList.toggle("open");
             d.querySelector("#menu-toggle").classList.toggle("open");
         }
 
         // Si el elemento objetivo del evento coincide con el selector de links
-        if (e.target.matches(".navegacion a")) {
+        if (e.target.matches(".navegacion-links a")) {
             // Eliminar la clase "open" de ambos elementos
-            d.querySelector(".navegacion").classList.remove("open");
+            d.querySelector(".navegacion-links").classList.remove("open");
             d.querySelector("#menu-toggle").classList.remove("open");
         }
     });
 
     // Posicion sticky no tapa titulos
-    const navigationHeight = d.querySelector(".nav-primary").offsetHeight;
+    const navigationHeight = d.querySelector(".navegacion-primaria").offsetHeight;
 
     d.documentElement.style.setProperty("--scroll-padding", navigationHeight + "px");
 
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     hiddenElements.forEach((el) => observer.observe(el));
 
     // Función para agregar o quitar la clase "sticky-nav" según la posición de desplazamiento
-    const navPrimary = d.querySelector(".nav-primary");
+    const navPrimary = d.querySelector(".navegacion-primaria");
     const scrollWatcher = d.createElement("div");
 
     scrollWatcher.setAttribute("data-scroll-watcher", "");
